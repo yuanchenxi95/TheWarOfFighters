@@ -24,6 +24,7 @@ public:
     void movePlayerRight();
     void moveFighter();
     void createFighter();
+    //todo
     // generate player projectile
     // move player projectile
     // generate enemy projectile

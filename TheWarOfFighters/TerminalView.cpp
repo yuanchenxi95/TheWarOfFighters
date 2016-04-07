@@ -8,7 +8,8 @@
 
 #include "TerminalView.hpp"
 #include <ncurses.h>
-TerminalView::TerminalView() {
+#include "ViewModel.hpp"
+TerminalView::TerminalView(ViewModel* vm) {
 }
 
 TerminalView::~TerminalView() {
