@@ -12,6 +12,10 @@
 		126A13751CB6EBB3005CC7F4 /* PlayerFighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 126A13731CB6EBB3005CC7F4 /* PlayerFighter.cpp */; };
 		126A13791CB6EC86005CC7F4 /* IProjectile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 126A13771CB6EC86005CC7F4 /* IProjectile.cpp */; };
 		126A137C1CB6EDC6005CC7F4 /* ProjectileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 126A137A1CB6EDC6005CC7F4 /* ProjectileManager.cpp */; };
+		126A137F1CB716B0005CC7F4 /* IWOFModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 126A137D1CB716B0005CC7F4 /* IWOFModel.cpp */; };
+		126A13821CB71808005CC7F4 /* FightersManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 126A13801CB71808005CC7F4 /* FightersManager.cpp */; };
+		126A13871CB71917005CC7F4 /* Wave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 126A13851CB71917005CC7F4 /* Wave.cpp */; };
+		126A138B1CB71A95005CC7F4 /* Counter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 126A13891CB71A95005CC7F4 /* Counter.cpp */; };
 		12E4F1B01CB3FA8700541BBF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12E4F1AF1CB3FA8700541BBF /* main.cpp */; };
 		12E4F1B81CB3FA9A00541BBF /* Cell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12E4F1B61CB3FA9A00541BBF /* Cell.cpp */; };
 /* End PBXBuildFile section */
@@ -39,6 +43,14 @@
 		126A13781CB6EC86005CC7F4 /* IProjectile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IProjectile.hpp; sourceTree = "<group>"; };
 		126A137A1CB6EDC6005CC7F4 /* ProjectileManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjectileManager.cpp; sourceTree = "<group>"; };
 		126A137B1CB6EDC6005CC7F4 /* ProjectileManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ProjectileManager.hpp; sourceTree = "<group>"; };
+		126A137D1CB716B0005CC7F4 /* IWOFModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IWOFModel.cpp; sourceTree = "<group>"; };
+		126A137E1CB716B0005CC7F4 /* IWOFModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IWOFModel.hpp; sourceTree = "<group>"; };
+		126A13801CB71808005CC7F4 /* FightersManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FightersManager.cpp; sourceTree = "<group>"; };
+		126A13811CB71808005CC7F4 /* FightersManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FightersManager.hpp; sourceTree = "<group>"; };
+		126A13851CB71917005CC7F4 /* Wave.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wave.cpp; sourceTree = "<group>"; };
+		126A13861CB71917005CC7F4 /* Wave.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Wave.hpp; sourceTree = "<group>"; };
+		126A13891CB71A95005CC7F4 /* Counter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Counter.cpp; sourceTree = "<group>"; };
+		126A138A1CB71A95005CC7F4 /* Counter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Counter.hpp; sourceTree = "<group>"; };
 		12E4F1AC1CB3FA8700541BBF /* TheWarOfFighters */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TheWarOfFighters; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E4F1AF1CB3FA8700541BBF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		12E4F1B61CB3FA9A00541BBF /* Cell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cell.cpp; sourceTree = "<group>"; };
@@ -59,10 +71,15 @@
 		126A13651CB6DECB005CC7F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				126A13881CB71A8C005CC7F4 /* Counter */,
+				126A13841CB71909005CC7F4 /* Wave */,
+				126A13831CB718CC005CC7F4 /* Managers */,
 				126A13761CB6EC76005CC7F4 /* Projectiles */,
 				126A13661CB6E160005CC7F4 /* Fighters */,
 				12E4F1B61CB3FA9A00541BBF /* Cell.cpp */,
 				12E4F1B71CB3FA9A00541BBF /* Cell.hpp */,
+				126A137D1CB716B0005CC7F4 /* IWOFModel.cpp */,
+				126A137E1CB716B0005CC7F4 /* IWOFModel.hpp */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -85,10 +102,37 @@
 			children = (
 				126A13771CB6EC86005CC7F4 /* IProjectile.cpp */,
 				126A13781CB6EC86005CC7F4 /* IProjectile.hpp */,
-				126A137A1CB6EDC6005CC7F4 /* ProjectileManager.cpp */,
-				126A137B1CB6EDC6005CC7F4 /* ProjectileManager.hpp */,
 			);
 			name = Projectiles;
+			sourceTree = "<group>";
+		};
+		126A13831CB718CC005CC7F4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				126A137A1CB6EDC6005CC7F4 /* ProjectileManager.cpp */,
+				126A137B1CB6EDC6005CC7F4 /* ProjectileManager.hpp */,
+				126A13801CB71808005CC7F4 /* FightersManager.cpp */,
+				126A13811CB71808005CC7F4 /* FightersManager.hpp */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		126A13841CB71909005CC7F4 /* Wave */ = {
+			isa = PBXGroup;
+			children = (
+				126A13851CB71917005CC7F4 /* Wave.cpp */,
+				126A13861CB71917005CC7F4 /* Wave.hpp */,
+			);
+			name = Wave;
+			sourceTree = "<group>";
+		};
+		126A13881CB71A8C005CC7F4 /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				126A13891CB71A95005CC7F4 /* Counter.cpp */,
+				126A138A1CB71A95005CC7F4 /* Counter.hpp */,
+			);
+			name = Counter;
 			sourceTree = "<group>";
 		};
 		12E4F1A31CB3FA8700541BBF = {
@@ -176,6 +220,10 @@
 				126A136C1CB6E4A8005CC7F4 /* IFighter.cpp in Sources */,
 				126A13791CB6EC86005CC7F4 /* IProjectile.cpp in Sources */,
 				126A137C1CB6EDC6005CC7F4 /* ProjectileManager.cpp in Sources */,
+				126A13871CB71917005CC7F4 /* Wave.cpp in Sources */,
+				126A138B1CB71A95005CC7F4 /* Counter.cpp in Sources */,
+				126A13821CB71808005CC7F4 /* FightersManager.cpp in Sources */,
+				126A137F1CB716B0005CC7F4 /* IWOFModel.cpp in Sources */,
 				126A13751CB6EBB3005CC7F4 /* PlayerFighter.cpp in Sources */,
 				12E4F1B01CB3FA8700541BBF /* main.cpp in Sources */,
 				12E4F1B81CB3FA9A00541BBF /* Cell.cpp in Sources */,
