@@ -8,7 +8,7 @@
 
 #include "PlayerFighter.hpp"
 
-PlayerFighter::PlayerFighter(Cell * c, int health) : IFighter(c, health) {
+PlayerFighter::PlayerFighter(Cell * c, int health, Direction d) : IFighter(c, health, d) {
     
 }
 

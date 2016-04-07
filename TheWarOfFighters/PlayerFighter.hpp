@@ -15,7 +15,7 @@
 class PlayerFighter : public IFighter{
 public:
     
-    PlayerFighter(Cell* c, int health);
+    PlayerFighter(Cell* c, int health, Direction d);
     ~PlayerFighter();
     
     

@@ -21,7 +21,7 @@ enum FighterType {
 class IFighter {
 public:
     
-    IFighter(Cell* c, int health);
+    IFighter(Cell* c, int health, Direction d);
     ~IFighter();
     
     Cell* setPosition(Cell* c);
@@ -37,6 +37,7 @@ public:
 protected:
     Cell * position;
     int health;
+    Direction direction;
     
 private:
     

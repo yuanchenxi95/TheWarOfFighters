@@ -8,7 +8,7 @@
 
 #include "EnemyFighter.hpp"
 
-EnemyFighter::EnemyFighter(Cell * c, int health) : IFighter(c, health) {
+EnemyFighter::EnemyFighter(Cell * c, int health, Direction d) : IFighter(c, health, d) {
     
 }
 
