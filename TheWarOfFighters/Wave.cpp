@@ -40,7 +40,7 @@ void Wave::updateList() {
 // are all the enemies dead
 bool Wave::allEnemiesDead() {
     for (EnemyFighter* f: *this->lof) {
-        if (!f->isDead()) {
+        if (!(f->getEnemyType() == DEADENEMYFIGHTER)) {
             return false;
         }
     }
