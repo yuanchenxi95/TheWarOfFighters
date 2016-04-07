@@ -61,3 +61,4 @@ int Cell::getX() {
 int Cell::getY() {
     return posY;
 }
+

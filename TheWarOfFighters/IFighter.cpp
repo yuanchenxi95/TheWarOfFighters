@@ -8,7 +8,6 @@
 
 #include "IFighter.hpp"
 
-
 IFighter::IFighter(Cell* c) {
     this->position = c;
 }

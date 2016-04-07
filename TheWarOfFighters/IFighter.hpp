@@ -20,7 +20,6 @@ enum FighterType {
 
 class IFighter {
 public:
-    
     IFighter(Cell* c);
     ~IFighter();
     
