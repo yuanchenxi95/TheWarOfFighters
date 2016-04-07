@@ -32,6 +32,12 @@ public:
     Cell* setDown(Cell* down);
     Cell* setLeft(Cell* left);
     Cell* setRight(Cell* right);
+    //todo: implement these methods
+    void setPosition(int col, int row);
+    void moveUp(int col, int row);
+    void moveDown(int col, int row);
+    void moveLeft(int col, int row);
+    void moveRight(int col, int row);
   
     
 protected:

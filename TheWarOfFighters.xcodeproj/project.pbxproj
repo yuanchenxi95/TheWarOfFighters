@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		126A136C1CB6E4A8005CC7F4 /* IFighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 126A136A1CB6E4A8005CC7F4 /* IFighter.cpp */; };
-		12E4F1B01CB3FA8700541BBF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12E4F1AF1CB3FA8700541BBF /* main.cpp */; };
+		12E4F1B01CB3FA8700541BBF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12E4F1AF1CB3FA8700541BBF /* main.cpp */; settings = {COMPILER_FLAGS = "-lncurses"; }; };
 		12E4F1B81CB3FA9A00541BBF /* Cell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12E4F1B61CB3FA9A00541BBF /* Cell.cpp */; };
+		90F00A411CB706040014CB90 /* libncurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F00A3E1CB705DE0014CB90 /* libncurses.tbd */; };
+		90F00A441CB70A280014CB90 /* MyFighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90F00A421CB70A280014CB90 /* MyFighter.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,13 +33,18 @@
 		12E4F1AF1CB3FA8700541BBF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		12E4F1B61CB3FA9A00541BBF /* Cell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cell.cpp; sourceTree = "<group>"; };
 		12E4F1B71CB3FA9A00541BBF /* Cell.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Cell.hpp; sourceTree = "<group>"; };
+		90F00A391CB702120014CB90 /* libncurses.5.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.5.4.tbd; path = usr/lib/libncurses.5.4.tbd; sourceTree = SDKROOT; };
+		90F00A3C1CB702390014CB90 /* libncurses.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.5.tbd; path = usr/lib/libncurses.5.tbd; sourceTree = SDKROOT; };
+		90F00A3E1CB705DE0014CB90 /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
+		90F00A421CB70A280014CB90 /* MyFighter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyFighter.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		12E4F1A91CB3FA8700541BBF /* Frameworks */ = {
+		90F00A401CB705FD0014CB90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90F00A411CB706040014CB90 /* libncurses.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +66,7 @@
 			children = (
 				126A136A1CB6E4A8005CC7F4 /* IFighter.cpp */,
 				126A136B1CB6E4A8005CC7F4 /* IFighter.hpp */,
+				90F00A421CB70A280014CB90 /* MyFighter.cpp */,
 			);
 			name = Fighters;
 			sourceTree = "<group>";
@@ -66,6 +74,9 @@
 		12E4F1A31CB3FA8700541BBF = {
 			isa = PBXGroup;
 			children = (
+				90F00A3E1CB705DE0014CB90 /* libncurses.tbd */,
+				90F00A3C1CB702390014CB90 /* libncurses.5.tbd */,
+				90F00A391CB702120014CB90 /* libncurses.5.4.tbd */,
 				12E4F1AE1CB3FA8700541BBF /* TheWarOfFighters */,
 				12E4F1AD1CB3FA8700541BBF /* Products */,
 			);
@@ -96,8 +107,8 @@
 			buildConfigurationList = 12E4F1B31CB3FA8700541BBF /* Build configuration list for PBXNativeTarget "TheWarOfFighters" */;
 			buildPhases = (
 				12E4F1A81CB3FA8700541BBF /* Sources */,
-				12E4F1A91CB3FA8700541BBF /* Frameworks */,
 				12E4F1AA1CB3FA8700541BBF /* CopyFiles */,
+				90F00A401CB705FD0014CB90 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -145,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				126A136C1CB6E4A8005CC7F4 /* IFighter.cpp in Sources */,
+				90F00A441CB70A280014CB90 /* MyFighter.cpp in Sources */,
 				12E4F1B01CB3FA8700541BBF /* main.cpp in Sources */,
 				12E4F1B81CB3FA9A00541BBF /* Cell.cpp in Sources */,
 			);
@@ -190,7 +202,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -228,7 +240,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
