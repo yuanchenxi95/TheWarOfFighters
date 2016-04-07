@@ -21,3 +21,23 @@ FighterType EnemyFighter::getFigterType() {
 }
 
 
+
+// set the enemy fighter type
+EnemyFighterType EnemyFighter::setEnemyType(EnemyFighterType eft) {
+    this->eft = eft;
+    return eft;
+}
+
+// get the enemy fighter type
+EnemyFighterType EnemyFighter::getEnemyType() {
+    return this->eft;
+}
+
+int EnemyFighter::getDamage(int d) {
+    this->health -= d;
+    if (this->health <= 0) {
+        this->eft = DEADENEMYFIGHTER;
+    }
+    return this->health;
+}
+
