@@ -11,4 +11,46 @@
 
 #include <stdio.h>
 
+class Cell {
+public:
+    
+    Cell(int x, int y);
+    // destructor
+    virtual ~Cell() = 0;
+    
+    
+    // get the position of this cell
+    int getX();
+    int getY();
+    
+    Cell* getUp();
+    Cell* getDown();
+    Cell* getRight();
+    Cell* getLeft();
+    
+    Cell* setUp(Cell* up);
+    Cell* setDown(Cell* down);
+    Cell* setLeft(Cell* left);
+    Cell* setRight(Cell* right);
+  
+    
+protected:
+    // the position of this tile
+    int posX;
+    int posY;
+    
+    Cell* up;
+    Cell* down;
+    Cell* right;
+    Cell* left;
+    
+    
+private:
+    Cell& operator=(const Cell & other);
+    
+};
+
+
+
+
 #endif /* Cell_hpp */
