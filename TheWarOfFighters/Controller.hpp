@@ -10,13 +10,13 @@
 #define Controller_hpp
 #include <ncurses.h>
 #include <stdio.h>
-#include "IProjectile.cpp"
+#include "IFighter.hpp"
 class Controller {
 public:
     void handleKeys();
-    Controller(IProjectile* projectile);
+    Controller(IFighter* fighter);
     ~Controller();
 protected:
-    IProjectile* projectile;
+    IFighter* fighter;
 };
 #endif /* Controller_hpp */

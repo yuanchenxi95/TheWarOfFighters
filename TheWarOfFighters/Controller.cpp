@@ -9,29 +9,29 @@
 #include "Controller.hpp"
 #include "IProjectile.hpp"
 #include <ncurses.h>
-Controller::Controller(IProjectile* projectile) {
-    this->projectile = projectile;
+Controller::Controller(IFighter* fighter) {
+    this->fighter = fighter;
 }
 
 void Controller::handleKeys(){
     char ch = getch();
     switch (ch) {
         case KEY_LEFT:
-            this->projectile->moveLEFT;
+            this->fighter->moveLEFT;
             break;
             
         case KEY_RIGHT:
-            this->projectile->moveRight;
+            this->fighter->moveRight;
             break;
             
         case KEY_UP:
-            this->projectile->moveUp;
+            this->fighter->moveUp;
             break;
         case KEY_DOWN:
-            this->projectile->moveDown;
+            this->fighter->moveDown;
             break;
-        case ' '：
-            this->projectile->shoot;
+        case  ' ':
+            this->fighter->shoot;
         default:
             break;
     }
