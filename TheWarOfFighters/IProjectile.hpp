@@ -17,6 +17,7 @@
 enum ProjectileType {
     ENEMYPORJECTILE,
     PLAYERPROJECTILE,
+    ZOMBIEPROJECTILE,
 };
 
 class IProjectile {
@@ -31,14 +32,15 @@ public:
     int getDamage();
     int setDamage(int d);
     
-    // tick this projectile
-    IProjectile* tickProjectile();
+    // tick this projectile, return true if this projectile is the zombie projectile
+    bool tickProjectile();
     
     // get the type of this fighter(EnemyFighter, PlayerFighter)
     ProjectileType getProjectileType();
     
     // get the direction of this projectile
     Direction getDirection();
+    
     
     
 protected:

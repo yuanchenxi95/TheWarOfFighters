@@ -43,19 +43,39 @@ int IProjectile::getDamage() {
 }
 
 // tick this projectile
-IProjectile* IProjectile::tickProjectile() {
+bool IProjectile::tickProjectile() {
+    
     if (getDirection() == UP) {
+        
+        if (this->position == this->position->getUp()) {
+            this->projType = ZOMBIEPROJECTILE;
+        }
+        
         this->position = this->position->getUp();
     } else if (getDirection() == DOWN) {
+        if (this->position == this->position->getDown()) {
+            this->projType = ZOMBIEPROJECTILE;
+        }
+        
         this->position = this->position->getDown();
     } else if (getDirection() == LEFT) {
+        
+        if (this->position == this->position->getLeft()) {
+            this->projType = ZOMBIEPROJECTILE;
+        }
+        
         this->position = this->position->getLeft();
     } else if (getDirection() == RIGHT) {
+        
+        if (this->position == this->position->getRight()) {
+            this->projType = ZOMBIEPROJECTILE;
+        }
         this->position = this->position->getRight();
     } else {
         throw std::invalid_argument( "UNKNOWN DIRECTION to move the porjectile" );
     }
-    return this;
+    
+    return this->projType == ZOMBIEPROJECTILE;;
     
 }
 

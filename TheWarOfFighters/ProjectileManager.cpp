@@ -30,12 +30,29 @@ vector<IProjectile*> * ProjectileManager::getLop() {
 
 // tick projectiles
 vector<IProjectile*> * ProjectileManager::tickLop() {
+    
+    
+    vector<IProjectile*> * nlop = new vector<IProjectile*>();
     for(IProjectile * p : *this->lop) {
-        p->tickProjectile();
+        if (!p->tickProjectile()) {
+            nlop->push_back(p);
+        }
     }
+    
+    // delete the old lop
+    lop->clear();
+    
+    lop = nlop;
     
     return this->lop;
 }
+
+// add the projectile to the manager
+vector<IProjectile*> * ProjectileManager::addProj(IProjectile * p) {
+    this->lop->push_back(p);
+    return this->lop;
+}
+
 
 
 

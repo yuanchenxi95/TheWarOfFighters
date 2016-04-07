@@ -25,6 +25,10 @@ public:
     // tick projectiles
     vector<IProjectile*> * tickLop();
     
+    // add the projectile to the manager
+    vector<IProjectile*> * addProj(IProjectile * p);
+    
+    
 protected:
     vector<IProjectile*> * lop;
     
