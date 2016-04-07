@@ -10,12 +10,15 @@
 #define View_hpp
 
 #include <stdio.h>
+#include "IWOFModel.hpp"
+#include "ViewModel.hpp"
 class View {
 protected:
-    View();
+    View(IWOFModel* adaptee);
     ~View();
 public:
-    
+    IWOFModel* adaptee;
+    ViewModel* ModelToViewModel(IWOFModel* adaptee);
     
 };
 #endif /* View_hpp */

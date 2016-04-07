@@ -8,3 +8,10 @@
 
 #include "TerminalView.hpp"
 #include <ncurses.h>
+TerminalView::TerminalView() {
+}
+
+TerminalView::~TerminalView() {
+}
+
+
