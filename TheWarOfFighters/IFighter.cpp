@@ -9,8 +9,9 @@
 #include "IFighter.hpp"
 
 
-IFighter::IFighter(Cell* c) {
+IFighter::IFighter(Cell* c, int health) {
     this->position = c;
+    this->health = health;
 }
 
 
@@ -27,4 +28,13 @@ Cell* IFighter::getPosition(Cell* c) {
     return this->position;
 }
 
+
+int IFighter::setHealth(int h) {
+    this->health = h;
+    return this->health;
+}
+
+int IFighter::getHealth() {
+    return this->health;
+}
 

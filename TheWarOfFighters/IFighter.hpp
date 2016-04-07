@@ -21,11 +21,14 @@ enum FighterType {
 class IFighter {
 public:
     
-    IFighter(Cell* c);
+    IFighter(Cell* c, int health);
     ~IFighter();
     
     Cell* setPosition(Cell* c);
     Cell* getPosition(Cell* c);
+    
+    int getHealth();
+    int setHealth(int h);
     
     // get the type of this fighter(EnemyFighter, PlayerFighter)
     virtual FighterType getFigterType() = 0;
@@ -33,7 +36,7 @@ public:
     
 protected:
     Cell * position;
-    
+    int health;
     
 private:
     

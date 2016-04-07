@@ -11,6 +11,13 @@
 
 #include <stdio.h>
 
+enum Direction {
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT,
+};
+
 class Cell {
 public:
     
