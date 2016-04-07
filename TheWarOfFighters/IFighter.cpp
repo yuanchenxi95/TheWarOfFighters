@@ -38,4 +38,3 @@ int IFighter::setHealth(int h) {
 int IFighter::getHealth() {
     return this->health;
 }
-

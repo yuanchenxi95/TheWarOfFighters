@@ -32,6 +32,9 @@ public:
     
     // get the type of this fighter(EnemyFighter, PlayerFighter)
     virtual FighterType getFigterType() = 0;
+
+    // get the damage, return the health
+    virtual int getDamage(int d) = 0;
     
     
 protected:

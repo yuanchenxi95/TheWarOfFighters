@@ -12,6 +12,11 @@
 #include <stdio.h>
 #include "IFighter.hpp"
 
+enum PlayerFighterType {
+    ALIVEPLAYER,
+    DEADPLAYER,
+};
+
 class PlayerFighter : public IFighter{
 public:
     
@@ -22,12 +27,15 @@ public:
     // get the type of this fighter(EnemyFighter, PlayerFighter)
     FighterType getFigterType();
     
+    PlayerFighterType getPlayerState();
+    
+    int getDamage(int d);
     
 protected:
     
 private:
     
-    
+    PlayerFighterType pft;
 };
 
 
