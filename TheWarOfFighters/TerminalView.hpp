@@ -10,8 +10,30 @@
 #define TerminalView_hpp
 #include <ncurses.h>
 #include <stdio.h>
+#include "ViewModel.hpp"
+
 class TerminalView {
+protected:
+    ViewModel* vm;
+    TerminalView(ViewModel* vm);
+    ~TerminalView();
 public:
-    TerminalView
+    void movePlayerUp();
+    void movePlayerDown();
+    void movePlayerLeft();
+    void movePlayerRight();
+    void moveFighter();
+    void createFighter();
+    //todo
+    // generate player projectile
+    // move player projectile
+    // generate enemy projectile
+    // move enemy projectile
+    // lost title
+    // beginning title
+    // win title
+    // round title
+    // fighter destroied
+    //
 };
 #endif /* TerminalView_hpp */
