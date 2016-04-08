@@ -38,6 +38,9 @@ public:
     // get the type of this fighter(EnemyFighter, PlayerFighter)
     ProjectileType getProjectileType();
     
+    // set the type of this fighter(EnemyFighter, PlayerFighter)
+    void setProjectileType(ProjectileType p);
+    
     // get the direction of this projectile
     Direction getDirection();
     

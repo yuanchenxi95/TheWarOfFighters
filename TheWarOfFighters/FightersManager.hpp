@@ -33,6 +33,7 @@ public:
     vector<EnemyFighter*> * getEnemyFighters();
     Map * getMap();
     PlayerFighter * getPlayerFighter();
+    void hitFighter();
     
 protected:
     

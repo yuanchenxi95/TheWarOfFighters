@@ -15,9 +15,11 @@ class Controller {
 public:
     Controller();
     ~Controller();
+    // handle the keys
     void handleKeys();
+    
+    
 protected:
-    PlayerFighter* fighter;
     IWOFModel * iwom;
     
     

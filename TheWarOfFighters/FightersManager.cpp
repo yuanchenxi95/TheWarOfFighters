@@ -35,6 +35,7 @@ int FightersManager::tick() {
     
     this->pm->tickLop();
     // to-do damage the fighters
+    this->hitFighter();
     
     if (this->wave->allEnemiesDead()) {
         vector<EnemyFighter*> * loe;
@@ -42,6 +43,44 @@ int FightersManager::tick() {
         this->wave = new Wave(loe);
     }
     return count;
+}
+
+void FightersManager::hitFighter() {
+    vector<IProjectile*> * vop = this->pm->getLop();
+    vector<EnemyFighter *> * voef = this->getEnemyFighters();
+    PlayerFighter * pf = this->getPlayerFighter();
+    
+    for (IProjectile * p : * vop) {
+        Cell * playPos = pf->getPosition();
+        Cell * pp = p->getPosition();
+
+        if (p->getProjectileType() == ENEMYPORJECTILE) {
+            
+            if (playPos->getY() == pp->getY() && playPos->getX() == pp->getX()) {
+                p->setProjectileType(ZOMBIEPROJECTILE);
+                pf->damageThisFighter(p->getDamage());
+            }
+        } else if(p->getProjectileType() == PLAYERPROJECTILE) {
+            for (EnemyFighter * ef : *voef) {
+                Cell * pe = ef->getPosition();
+                
+                if (pe->getY() == pp->getY() && pe->getX() == pp->getX()) {
+                    p->setProjectileType(ZOMBIEPROJECTILE);
+                    ef->damageThisFighter(p->getDamage());
+                }
+                
+                if (playPos->getX() == pe->getX() && playPos->getY() == pe->getY()) {
+                    pf->setPlaterState(DEADPLAYER);
+                    ef->setEnemyType(DEADENEMYFIGHTER);
+                }
+                
+            }
+        }
+        
+        
+    }
+    
+    
 }
 
 void FightersManager::addProjectile() {

@@ -12,31 +12,32 @@
 
 Controller::Controller() {
     this->iwom = new IWOFModel(15, 35);
-    this->fighter = iwom->getPlayerFighter();
 }
 
 void Controller::handleKeys(){
     char ch = getch();
     switch (ch) {
         case KEY_LEFT:
-            this->fighter->moveLeft();
+            this->iwom->moveLeft();
             break;
-            
         case KEY_RIGHT:
-            this->fighter->moveRight();
+            this->iwom->moveRight();
             break;
-            
         case KEY_UP:
-            this->fighter->moveUp();
+            this->iwom->moveUp();
             break;
         case KEY_DOWN:
-            this->fighter->moveDown();
+            this->iwom->moveDown();
+            break;
+        case ' ':
+            this->iwom->shoot();
             break;
         default:
             break;
     }
 }
+
 Controller::~Controller(){
-    
+    delete this->iwom;
 }
 

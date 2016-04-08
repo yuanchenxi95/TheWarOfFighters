@@ -14,6 +14,13 @@
 #include "ProjectileManager.hpp"
 #include "FightersManager.hpp"
 
+// gamestate constants
+enum GameState {
+    QUIT,
+    PLAYING,
+    GAMEMOVER,
+    MENU
+};
 
 class IWOFModel {
 public:
@@ -29,12 +36,26 @@ public:
     int getPlayerHealth();
     int getScore();
     
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
+    
+    // returns game state
+    GameState getGameState();
+    
+    // sets the current GameState to the given state
+    void setGameState(GameState newState);
+    
+    
     void tick();
     
     
 protected:
     
 private:
+    GameState gameState = PLAYING;         // game loop flag
+    
     FightersManager * fm;
     int score;
     Map * map;

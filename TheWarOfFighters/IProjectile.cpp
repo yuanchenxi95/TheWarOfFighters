@@ -89,6 +89,11 @@ ProjectileType IProjectile::getProjectileType() {
     return this->projType;
 }
 
+// set the type of this fighter(EnemyFighter, PlayerFighter)
+void IProjectile::setProjectileType(ProjectileType p) {
+    this->projType = p;
+}
+
 // get the direction of this projectile
 Direction IProjectile::getDirection() {
     return this->direction;

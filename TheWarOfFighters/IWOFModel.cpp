@@ -17,6 +17,7 @@ IWOFModel::IWOFModel(int height, int width) {
     
     this->pm = new ProjectileManager();
     this->fm = new FightersManager(this->pm, this->map);
+    this->gameState = PLAYING;
 }
 
 IWOFModel::~IWOFModel() {
@@ -57,4 +58,33 @@ int IWOFModel::getScore() {
 
 void IWOFModel::tick() {
     this->score += this->fm->tick();
+    
+    if (this->fm->getPlayerFighter()->getHealth() <= 0) {
+        this->setGameState(GAMEMOVER);
+    }
+}
+
+// returns the current game state
+GameState IWOFModel::getGameState() {
+    return gameState;
+}
+
+// sets the current GameState to the given state
+void IWOFModel::setGameState(GameState newState) {
+    gameState = newState;
+}
+
+
+
+void IWOFModel::moveUp() {
+    this->getPlayerFighter()->moveUp();
+}
+void IWOFModel::moveDown() {
+    this->getPlayerFighter()->moveDown();
+}
+void IWOFModel::moveLeft() {
+    this->getPlayerFighter()->moveLeft();
+}
+void IWOFModel::moveRight() {
+    this->getPlayerFighter()->moveRight();
 }
