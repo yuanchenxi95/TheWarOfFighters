@@ -10,8 +10,9 @@
 #include "PlayerFighter.hpp"
 #include <ncurses.h>
 
-Controller::Controller(PlayerFighter* fighter) {
-    this->fighter = fighter;
+Controller::Controller() {
+    this->iwom = new IWOFModel(15, 35);
+    this->fighter = iwom->getPlayerFighter();
 }
 
 void Controller::handleKeys(){

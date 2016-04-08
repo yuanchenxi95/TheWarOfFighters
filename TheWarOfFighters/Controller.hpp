@@ -10,13 +10,17 @@
 #define Controller_hpp
 #include <ncurses.h>
 #include <stdio.h>
-#include "PlayerFighter.hpp"
+#include "IWOFModel.hpp"
 class Controller {
 public:
-    Controller(PlayerFighter* fighter);
+    Controller();
     ~Controller();
     void handleKeys();
 protected:
     PlayerFighter* fighter;
+    IWOFModel * iwom;
+    
+    
+    
 };
 #endif /* Controller_hpp */
