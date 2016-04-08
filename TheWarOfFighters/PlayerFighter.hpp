@@ -32,6 +32,12 @@ public:
     
     int getDamage(int d);
     void updateFighter();
+    
+    
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
 
     
 protected:

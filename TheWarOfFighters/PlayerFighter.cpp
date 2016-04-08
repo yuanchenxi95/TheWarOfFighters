@@ -45,3 +45,16 @@ void PlayerFighter::updateFighter() {
         this->pft = DEADPLAYER;
     }
 }
+
+void PlayerFighter::moveUp() {
+    this->position->getUp();
+}
+void PlayerFighter::moveDown() {
+    this->position->getDown();
+}
+void PlayerFighter::moveLeft() {
+    this->position->getLeft();
+}
+void PlayerFighter::moveRight() {
+    this->position->getRight();
+}

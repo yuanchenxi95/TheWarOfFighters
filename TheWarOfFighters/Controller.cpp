@@ -7,9 +7,10 @@
 //
 
 #include "Controller.hpp"
-#include "IProjectile.hpp"
+#include "PlayerFighter.hpp"
 #include <ncurses.h>
-Controller::Controller(IFighter* fighter) {
+
+Controller::Controller(PlayerFighter* fighter) {
     this->fighter = fighter;
 }
 
@@ -17,21 +18,19 @@ void Controller::handleKeys(){
     char ch = getch();
     switch (ch) {
         case KEY_LEFT:
-            this->fighter->moveLEFT;
+            this->fighter->moveLeft();
             break;
             
         case KEY_RIGHT:
-            this->fighter->moveRight;
+            this->fighter->moveRight();
             break;
             
         case KEY_UP:
-            this->fighter->moveUp;
+            this->fighter->moveUp();
             break;
         case KEY_DOWN:
-            this->fighter->moveDown;
+            this->fighter->moveDown();
             break;
-        case  ' ':
-            this->fighter->shoot;
         default:
             break;
     }
