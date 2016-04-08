@@ -19,6 +19,8 @@ class IWOFModel {
 public:
     IWOFModel(int height, int width);
     ~IWOFModel();
+    
+    
     vector<vector<Cell*>*> * getBoard();
     void shoot();
     vector<EnemyFighter*> * getEnemyFighterList();
