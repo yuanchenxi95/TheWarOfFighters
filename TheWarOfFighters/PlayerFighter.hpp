@@ -28,8 +28,11 @@ public:
     FighterType getFigterType();
     
     PlayerFighterType getPlayerState();
+    PlayerFighterType setPlaterState(PlayerFighterType);
     
     int getDamage(int d);
+    void updateFighter();
+
     
 protected:
     

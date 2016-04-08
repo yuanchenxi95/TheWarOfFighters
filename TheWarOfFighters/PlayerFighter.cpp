@@ -31,4 +31,17 @@ int PlayerFighter::getDamage(int d) {
     return this->health;
 }
 
-PlayerFighterType PlayerFighter::
+PlayerFighterType PlayerFighter::getPlayerState() {
+    return this->pft;
+}
+
+PlayerFighterType PlayerFighter::setPlaterState(PlayerFighterType pft) {
+    this->pft = pft;
+    return this->pft;
+}
+
+void PlayerFighter::updateFighter() {
+    if (this->health <= 0) {
+        this->pft = DEADPLAYER;
+    }
+}

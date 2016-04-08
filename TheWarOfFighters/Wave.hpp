@@ -38,7 +38,7 @@ public:
     // get the enemy list
     vector<EnemyFighter *> * getEnemies();
     
-    // move and spawn the enemy, return how many enemies reach the end
+    // move and spawn the enemy, return how many enemies were killed in this wave
     int move();
     
 private:
@@ -47,18 +47,9 @@ private:
     
     vector<EnemyFighter*>* lof;
     
-    
-    // move the enemy
-    void moveHelp(EnemyFighter *);
-    
-    // remove the enemy in the list and hashmap, delete the enemy
-    void removeEnemy(EnemyFighter *, int);
-    
     // kill the enemies that reach the end
     int killEndEnemy();
     
-    // spawn an enemy on board
-    void spawnEnemy(EnemyFighter * e);
     
 };
 

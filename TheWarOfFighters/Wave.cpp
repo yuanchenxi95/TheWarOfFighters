@@ -34,13 +34,15 @@ bool Wave::anyEnemyToSpawn() {
 
 // update enemy list, remove the dead enemies
 void Wave::updateList() {
-    // TO-DO
+    for (EnemyFighter * f : *this->lof) {
+        f->updateFighter();
+    }
 }
 
 // are all the enemies dead
 bool Wave::allEnemiesDead() {
     for (EnemyFighter* f: *this->lof) {
-        if (!(f->getEnemyType() == DEADENEMYFIGHTER)) {
+        if (f->getEnemyType() != DEADENEMYFIGHTER && f->getEnemyType() != ZOMBIEENEMYFIGHTER) {
             return false;
         }
     }
@@ -50,10 +52,30 @@ bool Wave::allEnemiesDead() {
 }
 
 // get the enemy list
-vector<EnemyFighter *> * getEnemies();
+vector<EnemyFighter *> * Wave::getEnemies() {
+    return this->lof;
+}
 
-// move and spawn the enemy, return how many enemies reach the end
-int move();
+// move and spawn the enemy, return how many enemies were killed in this wave
+int Wave::move() {
+    // TO-DO
+    int count = 0;
+    
+    this->updateList();
+    
+    
+    for (EnemyFighter * f : *this->lof) {
+        if (f->getEnemyType() == ALIVEENEMYFIGHTER) {
+            f->moveThisFighter();
+        } else if (f->getEnemyType() == DEADENEMYFIGHTER){
+            count++;
+        }
+    }
+    
+    return count;
+    
+    
+}
 
 
 

@@ -36,6 +36,12 @@ public:
     
     int getDamage(int d);
 
+    // update the state of this fighter
+    void updateFighter();
+    
+    // move the enemy to this->direction
+    void moveThisFighter();
+    
     
 protected:
     

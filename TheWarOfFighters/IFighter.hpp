@@ -30,11 +30,21 @@ public:
     int getHealth();
     int setHealth(int h);
     
+    Cell* moveUp();
+    Cell* moveDown();
+    Cell* moveRight();
+    Cell* moveLeft();
+    
+    Direction getDirection();
+    
     // get the type of this fighter(EnemyFighter, PlayerFighter)
     virtual FighterType getFigterType() = 0;
 
     // get the damage, return the health
     virtual int getDamage(int d) = 0;
+    
+    // update the state of this fighter
+    virtual void updateFighter() = 0;
     
     
 protected:
