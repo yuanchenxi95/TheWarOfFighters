@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 
+using namespace std;
 enum Direction {
     UP,
     DOWN,
@@ -23,7 +24,7 @@ public:
     
     Cell(int x, int y);
     // destructor
-    virtual ~Cell() = 0;
+    ~Cell();
     
     
     // get the position of this cell

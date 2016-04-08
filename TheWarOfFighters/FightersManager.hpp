@@ -15,20 +15,37 @@
 #include "ProjectileManager.hpp"
 #include "IFighter.hpp"
 #include "PlayerFighter.hpp"
+#include "Wave.hpp"
+#include "Map.hpp"
 
 class FightersManager {
 public:
     
-    FightersManager();
+    FightersManager(ProjectileManager * p, Map * map);
     ~FightersManager();
+    
+    // tick the world and return the number of dead enemies
+    int tick();
+    // player shoot
+    void shoot();
+    
+    ProjectileManager * getProjectileManager();
+    vector<EnemyFighter*> * getEnemyFighters();
+    Map * getMap();
+    PlayerFighter * getPlayerFighter();
     
 protected:
     
     
     
 private:
-    ProjectileManager * fm;
+    ProjectileManager * pm;
+    Wave * wave;
+    Map * map;
+    PlayerFighter * player;
     
+    void addProjectile();
+    void initializeEnemyList(vector<EnemyFighter*> *);
     
 };
 

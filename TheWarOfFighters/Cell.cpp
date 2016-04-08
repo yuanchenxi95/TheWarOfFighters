@@ -15,7 +15,9 @@ Cell::Cell(int x, int y) {
     this->posY = y;
 }
 
-
+Cell::~Cell() {
+    
+}
 
 Cell* Cell::getUp() {
     return this->up;

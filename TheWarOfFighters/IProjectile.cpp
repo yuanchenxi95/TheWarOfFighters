@@ -28,7 +28,7 @@ Cell* IProjectile::setPosition(Cell* c) {
     return this->position;
 }
 
-Cell* IProjectile::getPosition(Cell* c) {
+Cell* IProjectile::getPosition() {
     return this->position;
 }
 
@@ -52,11 +52,13 @@ bool IProjectile::tickProjectile() {
         }
         
         this->position = this->position->getUp();
+        this->position = this->position->getUp();
     } else if (getDirection() == DOWN) {
         if (this->position == this->position->getDown()) {
             this->projType = ZOMBIEPROJECTILE;
         }
         
+        this->position = this->position->getDown();
         this->position = this->position->getDown();
     } else if (getDirection() == LEFT) {
         
@@ -65,12 +67,15 @@ bool IProjectile::tickProjectile() {
         }
         
         this->position = this->position->getLeft();
+        this->position = this->position->getLeft();
     } else if (getDirection() == RIGHT) {
         
         if (this->position == this->position->getRight()) {
             this->projType = ZOMBIEPROJECTILE;
         }
         this->position = this->position->getRight();
+        this->position = this->position->getRight();
+        
     } else {
         throw std::invalid_argument( "UNKNOWN DIRECTION to move the porjectile" );
     }

@@ -9,7 +9,7 @@
 #include "EnemyFighter.hpp"
 #include <stdexcept>
 
-EnemyFighter::EnemyFighter(Cell * c, int health, Direction d) : IFighter(c, health, d) {
+EnemyFighter::EnemyFighter(Cell * c, int health, Direction d) : IFighter(c, health, d, 5) {
     
 }
 
@@ -17,7 +17,7 @@ EnemyFighter::~EnemyFighter() {
     
 }
 
-FighterType EnemyFighter::getFigterType() {
+FighterType EnemyFighter::getFighterType() {
     return ENEMYFIGHTER;
 }
 
@@ -34,7 +34,7 @@ EnemyFighterType EnemyFighter::getEnemyType() {
     return this->eft;
 }
 
-int EnemyFighter::getDamage(int d) {
+int EnemyFighter::damageThisFighter(int d) {
     this->health -= d;
     if (this->health <= 0) {
         this->eft = DEADENEMYFIGHTER;

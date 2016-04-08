@@ -27,7 +27,7 @@ public:
     ~IProjectile();
     
     Cell* setPosition(Cell* c);
-    Cell* getPosition(Cell* c);
+    Cell* getPosition();
     
     int getDamage();
     int setDamage(int d);

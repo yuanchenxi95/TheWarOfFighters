@@ -9,10 +9,11 @@
 #include "IFighter.hpp"
 
 
-IFighter::IFighter(Cell* c, int health, Direction d) {
+IFighter::IFighter(Cell* c, int health, Direction d, int damage) {
     this->position = c;
     this->health = health;
     this->direction = d;
+    this->damage = damage;
 }
 
 
@@ -25,7 +26,7 @@ Cell* IFighter::setPosition(Cell* c) {
     return this->position;
 }
 
-Cell* IFighter::getPosition(Cell* c) {
+Cell* IFighter::getPosition() {
     return this->position;
 }
 
@@ -39,6 +40,9 @@ int IFighter::getHealth() {
     return this->health;
 }
 
+int IFighter::getDamage() {
+    return this->damage;
+}
 
 Cell* IFighter::moveUp() {
     this->position = this->position->getUp();

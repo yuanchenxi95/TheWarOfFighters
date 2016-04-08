@@ -16,6 +16,7 @@ View::View(IWOFModel* adaptee) {
 View::~View(){
     
 }
-
-ViewModel* View::ModelToViewModel(IWOFModel* adaptee) {
-    return new ViewModel(adaptee->row_size, adaptee->col_size, adaptee->player_pos, adaptee->enemy_pos);
+//
+//ViewModel* View::ModelToViewModel(IWOFModel* adaptee) {
+//    return new ViewModel(adaptee->row_size, adaptee->col_size, adaptee->player_pos, adaptee->enemy_pos);
+//}

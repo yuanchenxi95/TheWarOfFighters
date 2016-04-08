@@ -26,7 +26,7 @@ public:
     
     
     // get the type of this fighter(EnemyFighter, PlayerFighter)
-    FighterType getFigterType();
+    FighterType getFighterType();
     
     // set the enemy fighter type
     EnemyFighterType setEnemyType(EnemyFighterType);
@@ -34,17 +34,14 @@ public:
     // get the enemy fighter type
     EnemyFighterType getEnemyType();
     
-    int getDamage(int d);
+    int damageThisFighter(int d);
 
     // update the state of this fighter
     void updateFighter();
     
     // move the enemy to this->direction
     void moveThisFighter();
-    
-    
-protected:
-    
+
 private:
     
     EnemyFighterType eft;

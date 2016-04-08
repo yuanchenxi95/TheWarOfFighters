@@ -25,12 +25,12 @@ public:
     
     
     // get the type of this fighter(EnemyFighter, PlayerFighter)
-    FighterType getFigterType();
+    FighterType getFighterType();
     
     PlayerFighterType getPlayerState();
     PlayerFighterType setPlaterState(PlayerFighterType);
     
-    int getDamage(int d);
+    int damageThisFighter(int d);
     void updateFighter();
     
     

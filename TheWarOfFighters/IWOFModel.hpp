@@ -12,17 +12,31 @@
 #include <stdio.h>
 #include <vector>
 #include "ProjectileManager.hpp"
+#include "FightersManager.hpp"
 
 
 class IWOFModel {
 public:
-    vector<Cell> getBoard();
+    IWOFModel(int height, int width);
+    ~IWOFModel();
+    vector<vector<Cell*>*> * getBoard();
+    void shoot();
+    vector<EnemyFighter*> * getEnemyFighterList();
+    PlayerFighter * getPlayerFighter();
+    vector<IProjectile*> * getProjectList();
+    int getPlayerHealth();
+    int getScore();
     
+    void tick();
     
     
 protected:
     
 private:
+    FightersManager * fm;
+    int score;
+    Map * map;
+    ProjectileManager * pm;
 };
 
 #endif /* IWOFModel_hpp */

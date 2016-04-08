@@ -8,7 +8,7 @@
 
 #include "PlayerFighter.hpp"
 
-PlayerFighter::PlayerFighter(Cell * c, int health, Direction d) : IFighter(c, health, d) {
+PlayerFighter::PlayerFighter(Cell * c, int health, Direction d) : IFighter(c, health, d, 5) {
     pft = ALIVEPLAYER;
 }
 
@@ -19,11 +19,11 @@ PlayerFighter::~PlayerFighter() {
 
 
 
-FighterType PlayerFighter::getFigterType() {
+FighterType PlayerFighter::getFighterType() {
     return PLAYERFIGHTER;
 }
 
-int PlayerFighter::getDamage(int d) {
+int PlayerFighter::damageThisFighter(int d) {
     this->health -= d;
     if (this->health <= 0) {
         this->pft = DEADPLAYER;

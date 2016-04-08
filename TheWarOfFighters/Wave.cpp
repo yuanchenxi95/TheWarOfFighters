@@ -10,28 +10,12 @@
 
 
 Wave::Wave(vector<EnemyFighter*>* lof) {
-    this->lof = lof;
-    //spawn every minion in 100 milliseconds
-    this->spawnCounter = new Counter(new int(100));
-}
+    this->lof = lof;}
 
 Wave::~Wave() {
     this->lof->clear();
     delete(this->lof);
-    delete(this->spawnCounter);
 }
-
-// tick and move the wave.
-void Wave::tick() {
-    spawnCounter->tick();
-}
-
-// return ture if there is an enemy to be spawned
-bool Wave::anyEnemyToSpawn() {
-    return false;
-}
-
-
 // update enemy list, remove the dead enemies
 void Wave::updateList() {
     for (EnemyFighter * f : *this->lof) {
@@ -58,22 +42,40 @@ vector<EnemyFighter *> * Wave::getEnemies() {
 
 // move and spawn the enemy, return how many enemies were killed in this wave
 int Wave::move() {
-    // TO-DO
-    int count = 0;
-    
+
     this->updateList();
     
     
     for (EnemyFighter * f : *this->lof) {
         if (f->getEnemyType() == ALIVEENEMYFIGHTER) {
             f->moveThisFighter();
-        } else if (f->getEnemyType() == DEADENEMYFIGHTER){
+        }
+    }
+    
+    return removeBadEnemy();
+    
+    
+}
+
+int Wave::removeBadEnemy() {
+    int count = 0;
+    
+    vector<EnemyFighter*>* newLof = new vector<EnemyFighter*>();
+
+    
+    for (EnemyFighter * f : *this->lof) {
+        if (f->getEnemyType() == ALIVEENEMYFIGHTER) {
+            newLof->push_back(f);
+        } else if (f->getEnemyType() == DEADENEMYFIGHTER) {
             count++;
         }
     }
     
-    return count;
+    lof->clear();
+    lof = newLof;
     
+    return count;
+
     
 }
 

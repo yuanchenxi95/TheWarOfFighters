@@ -21,13 +21,7 @@ class Wave{
 public:
     Wave(vector<EnemyFighter*>*);
     ~Wave();
-    
-    // tick and move the wave.
-    void tick();
-    
-    // return ture if there is an enemy to be spawned
-    bool anyEnemyToSpawn();
-    
+
     
     // update enemy list, remove the dead enemies
     void updateList();
@@ -42,13 +36,12 @@ public:
     int move();
     
 private:
-    
-    Counter * spawnCounter;
+
     
     vector<EnemyFighter*>* lof;
     
-    // kill the enemies that reach the end
-    int killEndEnemy();
+    // remove the bad enemies
+    int removeBadEnemy();
     
     
 };
