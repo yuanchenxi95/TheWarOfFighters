@@ -20,6 +20,9 @@
 		12E4F1B81CB3FA9A00541BBF /* Cell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12E4F1B61CB3FA9A00541BBF /* Cell.cpp */; };
 		90F00A461CB714C80014CB90 /* libncurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F00A451CB714C80014CB90 /* libncurses.tbd */; };
 		90F00A4A1CB716260014CB90 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90F00A481CB716260014CB90 /* Controller.cpp */; };
+		90F00A4E1CB71C5C0014CB90 /* TerminalView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90F00A4C1CB71C5C0014CB90 /* TerminalView.cpp */; };
+		90F00A511CB71CBD0014CB90 /* ViewModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90F00A4F1CB71CBD0014CB90 /* ViewModel.cpp */; };
+		90F00A541CB720300014CB90 /* View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90F00A521CB720300014CB90 /* View.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +63,12 @@
 		90F00A451CB714C80014CB90 /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
 		90F00A481CB716260014CB90 /* Controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Controller.cpp; sourceTree = "<group>"; };
 		90F00A491CB716260014CB90 /* Controller.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Controller.hpp; sourceTree = "<group>"; };
+		90F00A4C1CB71C5C0014CB90 /* TerminalView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TerminalView.cpp; sourceTree = "<group>"; };
+		90F00A4D1CB71C5C0014CB90 /* TerminalView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TerminalView.hpp; sourceTree = "<group>"; };
+		90F00A4F1CB71CBD0014CB90 /* ViewModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ViewModel.cpp; sourceTree = "<group>"; };
+		90F00A501CB71CBD0014CB90 /* ViewModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ViewModel.hpp; sourceTree = "<group>"; };
+		90F00A521CB720300014CB90 /* View.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View.cpp; sourceTree = "<group>"; };
+		90F00A531CB720300014CB90 /* View.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = View.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +170,7 @@
 		12E4F1AE1CB3FA8700541BBF /* TheWarOfFighters */ = {
 			isa = PBXGroup;
 			children = (
+				90F00A4B1CB71C030014CB90 /* View */,
 				90F00A471CB715AB0014CB90 /* Contoller */,
 				126A13651CB6DECB005CC7F4 /* Model */,
 				12E4F1AF1CB3FA8700541BBF /* main.cpp */,
@@ -175,6 +185,19 @@
 				90F00A491CB716260014CB90 /* Controller.hpp */,
 			);
 			name = Contoller;
+			sourceTree = "<group>";
+		};
+		90F00A4B1CB71C030014CB90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90F00A4C1CB71C5C0014CB90 /* TerminalView.cpp */,
+				90F00A4D1CB71C5C0014CB90 /* TerminalView.hpp */,
+				90F00A4F1CB71CBD0014CB90 /* ViewModel.cpp */,
+				90F00A501CB71CBD0014CB90 /* ViewModel.hpp */,
+				90F00A521CB720300014CB90 /* View.cpp */,
+				90F00A531CB720300014CB90 /* View.hpp */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +257,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				126A13721CB6E962005CC7F4 /* EnemyFighter.cpp in Sources */,
+				90F00A541CB720300014CB90 /* View.cpp in Sources */,
 				126A136C1CB6E4A8005CC7F4 /* IFighter.cpp in Sources */,
 				126A13791CB6EC86005CC7F4 /* IProjectile.cpp in Sources */,
 				90F00A4A1CB716260014CB90 /* Controller.cpp in Sources */,
+				90F00A511CB71CBD0014CB90 /* ViewModel.cpp in Sources */,
 				126A137C1CB6EDC6005CC7F4 /* ProjectileManager.cpp in Sources */,
 				126A13871CB71917005CC7F4 /* Wave.cpp in Sources */,
 				126A138B1CB71A95005CC7F4 /* Counter.cpp in Sources */,
@@ -244,6 +269,7 @@
 				126A137F1CB716B0005CC7F4 /* IWOFModel.cpp in Sources */,
 				126A13751CB6EBB3005CC7F4 /* PlayerFighter.cpp in Sources */,
 				12E4F1B01CB3FA8700541BBF /* main.cpp in Sources */,
+				90F00A4E1CB71C5C0014CB90 /* TerminalView.cpp in Sources */,
 				12E4F1B81CB3FA9A00541BBF /* Cell.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
