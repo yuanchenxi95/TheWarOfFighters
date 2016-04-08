@@ -14,10 +14,23 @@
 
 class TerminalView {
 protected:
+    ~TerminalView();
+    char figher_char ='>';
+    char bullet_char = '-';
+    char enemy_char='*';
+    int row_size;
+    int col_size;
+    Cell* player_pos;
+    std::vector<Cell*> * enemy_pos;
+    std::vector<Cell*> * projectilePos;
+public:
     ViewModel* vm;
     TerminalView(ViewModel* vm);
-    ~TerminalView();
-public:
+    void welcome();
+    void initialize();
+    void endGame();
+    void clear();
+    void createMap();
     void movePlayerUp();
     void movePlayerDown();
     void movePlayerLeft();

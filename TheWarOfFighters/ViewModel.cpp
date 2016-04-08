@@ -10,11 +10,12 @@
 #include <vector>
 #include "Cell.hpp"
 ViewModel::ViewModel(int row_size, int col_size, Cell* player_pos,
-                     std::vector<Cell*> enemy_pos) {
+                     vector<Cell*> * enemy_pos, std::vector<Cell*> * projectilePos) {
     this->row_size = row_size;
     this->col_size = col_size;
     this->player_pos = player_pos;
     this->enemy_pos = enemy_pos;
+    this->projectilePos = projectilePos;
 }
 int ViewModel::get_row_size() {
     return this->row_size;
@@ -28,8 +29,12 @@ Cell* ViewModel::get_player_pos() {
     return this->player_pos;
 }
 
-std::vector<Cell*> ViewModel::get_enemy_pos() {
+std::vector<Cell*> * ViewModel::get_enemy_pos() {
     return this->enemy_pos;
+}
+
+std::vector<Cell*> * ViewModel::getProjectilePos() {
+    return this->projectilePos;
 }
 
 ViewModel::~ViewModel() {
