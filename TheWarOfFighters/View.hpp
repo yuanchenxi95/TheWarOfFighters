@@ -13,12 +13,14 @@
 #include "IWOFModel.hpp"
 #include "ViewModel.hpp"
 class View {
-protected:
+public:
     View(IWOFModel* adaptee);
     ~View();
-public:
     IWOFModel* adaptee;
     ViewModel* ModelToViewModel(IWOFModel* adaptee);
+    
+    // TO-DO: render()
+    // render the scene
     
 };
 #endif /* View_hpp */
