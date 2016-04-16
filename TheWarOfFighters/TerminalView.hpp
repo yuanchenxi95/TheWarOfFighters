@@ -14,7 +14,6 @@
 
 class TerminalView {
 protected:
-    ~TerminalView();
     char figher_char ='>';
     char bullet_char = '-';
     char enemy_char='*';
@@ -26,6 +25,7 @@ protected:
 public:
     ViewModel* vm;
     TerminalView(ViewModel* vm);
+    ~TerminalView();
     void welcome();
     void initialize();
     void endGame();
@@ -37,6 +37,7 @@ public:
     void movePlayerRight();
     void moveFighter();
     void createFighter();
+    void render();
     //todo
     // generate player projectile
     // move player projectile

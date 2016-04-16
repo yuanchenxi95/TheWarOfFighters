@@ -12,7 +12,8 @@
 #include <stdio.h>
 #include "IWOFModel.hpp"
 #include <time.h>
-#include "View.hpp"
+#include "Adapter.hpp"
+#include "TerminalView.hpp"
 
 class Controller {
 public:
@@ -21,15 +22,15 @@ public:
     // handle the keys
     void handleKeys();
     void startLoop();
+    void welcome();
     
 protected:
     IWOFModel * iwom;
-    View * view;
+    ViewModel * vm;
+    TerminalView * view;
+    Adapter * adapter;
     time_t startTime;
     time_t curTime;
     time_t curTime2;
-    
-    
-    
 };
 #endif /* Controller_hpp */

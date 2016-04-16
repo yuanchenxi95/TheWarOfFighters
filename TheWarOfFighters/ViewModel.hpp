@@ -11,6 +11,7 @@
 #include "Cell.hpp"
 #include <stdio.h>
 #include <vector>
+#include "IWOFModel.hpp"
 class ViewModel {
 private:
     int row_size;
@@ -18,11 +19,13 @@ private:
     Cell* player_pos;
     std::vector<Cell*> * enemy_pos;
     std::vector<Cell*> * projectilePos;
+    GameState gs;
     
 
 public:
+    //TODO status
     ViewModel(int row_size, int col_size, Cell* player_pos,
-              std::vector<Cell*> * enemy_pos, std::vector<Cell*> * projectilePos);
+              std::vector<Cell*> * enemy_pos, std::vector<Cell*> * projectilePos, GameState gs);
     ~ViewModel();
     int get_row_size();
     int get_col_size();

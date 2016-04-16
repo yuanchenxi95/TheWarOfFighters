@@ -1,26 +1,23 @@
 //
-//  View.hpp
+//  Adapter.hpp
 //  TheWarOfFighters
 //
-//  Created by Leyi Qiang on 4/7/16.
+//  Created by Leyi Qiang on 4/13/16.
 //  Copyright © 2016 Chenxi Yuan. All rights reserved.
 //
 
-#ifndef View_hpp
-#define View_hpp
+#ifndef Adapter_hpp
+#define Adapter_hpp
 
 #include <stdio.h>
 #include "IWOFModel.hpp"
 #include "ViewModel.hpp"
-class View {
+class Adapter {
 public:
-    View(IWOFModel* adaptee);
-    ~View();
+    Adapter(IWOFModel* adaptee);
+    ~Adapter();
     IWOFModel* adaptee;
     ViewModel* ModelToViewModel(IWOFModel* adaptee);
     
-    // TO-DO: render()
-    // render the scene
-    
 };
-#endif /* View_hpp */
+#endif /* Adapter_hpp */
