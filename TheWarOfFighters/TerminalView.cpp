@@ -9,7 +9,6 @@
 #include "TerminalView.hpp"
 #include <ncurses.h>
 #include "ViewModel.hpp"
-#include <ncurses.h>
 TerminalView::TerminalView(ViewModel* vm) {
     this->vm = vm;
     this->col_size = vm->get_col_size();
@@ -32,7 +31,7 @@ TerminalView::~TerminalView() {
 }
 
 void TerminalView::clear() {
-    clear();
+    ::clear();
 }
 
 void TerminalView::initialize() {
