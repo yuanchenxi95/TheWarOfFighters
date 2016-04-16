@@ -31,7 +31,7 @@ ViewModel* Adapter::ModelToViewModel(IWOFModel* adaptee) {
     
     std::vector<IProjectile*> * projectList = adaptee->getProjectList();
     std::vector<Cell*> * projectilePos = new vector<Cell*>(sizeof(projectList));
-    for (int i = 0; i < sizeof(projectList); i++) {
+    for (int i = 0; i < projectList->size(); i++) {
         projectilePos->push_back(projectList->at(0)->getPosition());
     }
     return new ViewModel(row_size, col_size, playerFighterPos, enemyPosList, projectilePos, gs);

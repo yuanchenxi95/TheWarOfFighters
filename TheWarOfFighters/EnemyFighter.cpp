@@ -10,7 +10,7 @@
 #include <stdexcept>
 
 EnemyFighter::EnemyFighter(Cell * c, int health, Direction d) : IFighter(c, health, d, 5) {
-    
+    this->eft = ALIVEENEMYFIGHTER;
 }
 
 EnemyFighter::~EnemyFighter() {
