@@ -56,6 +56,7 @@ void Controller::welcome() {
 }
 void Controller::startLoop() {
     while(this->iwom->getGameState() != QUIT) {
+        
         switch (this->iwom->getGameState()) {
                 this->handleKeys();
             case PLAYING:
