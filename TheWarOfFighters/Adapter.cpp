@@ -18,12 +18,12 @@ Adapter::~Adapter(){
 }
 
 ViewModel* Adapter::ModelToViewModel(IWOFModel* adaptee) {
-    int row_size = sizeof(adaptee->getBoard()->at(0));
-    int col_size = sizeof(adaptee->getBoard());
+    int row_size = adaptee->getBoard()->at(0)->size();
+    int col_size = adaptee->getBoard()->size();
     GameState gs = adaptee->getGameState();
     Cell* playerFighterPos = adaptee->getPlayerFighter()->getPosition();
     std::vector<EnemyFighter*> * enemyList = adaptee->getEnemyFighterList();
-    std::vector<Cell*> * enemyPosList = new vector<Cell*>(sizeof(enemyList));
+    std::vector<Cell*> * enemyPosList = new vector<Cell*>(enemyList->size());
     std::cout<<enemyList->size()<<"\n";
     for (int i = 0; i < enemyList->size(); i++) {
         enemyPosList->push_back(enemyList->at(0)->getPosition());

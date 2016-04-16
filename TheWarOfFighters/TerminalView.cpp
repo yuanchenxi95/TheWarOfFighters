@@ -64,11 +64,11 @@ void TerminalView::createMap() {
 
 void TerminalView::render() {
     mvaddch(this->player_pos->getX(), this->player_pos->getY(), this->figher_char);
-    for(int i = 0; i < sizeof(enemy_pos); i++) {
+    for(int i = 0; i < enemy_pos->size(); i++) {
         mvaddch(this->enemy_pos->at(i)->getX(),this->enemy_pos->at(i)->getY(),this->enemy_char);
     }
     
-    for (int i = 0; i < sizeof(projectilePos); i++) {
+    for (int i = 0; i < projectilePos->size(); i++) {
         mvaddch(this->projectilePos->at(i)->getX(), this->projectilePos->at(i)->getX(), this->bullet_char);
     }
 }
