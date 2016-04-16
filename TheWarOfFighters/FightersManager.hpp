@@ -46,7 +46,7 @@ private:
     PlayerFighter * player;
     
     void addProjectile();
-    void initializeEnemyList(vector<EnemyFighter*> *);
+    void initializeEnemyList(vector<EnemyFighter*> **);
     
 };
 

@@ -14,7 +14,8 @@ FightersManager::FightersManager(ProjectileManager * p, Map * map) {
     this->map = map;
     
     vector<EnemyFighter*> * loe;
-    this->initializeEnemyList(loe);
+    this->initializeEnemyList(&loe);
+
     this->wave = new Wave(loe);
     Cell * playerCell = this->map->getMap()->at(map->height / 2)->at(0);
     this->player = new PlayerFighter(playerCell, 100, RIGHT);
@@ -39,7 +40,7 @@ int FightersManager::tick() {
     
     if (this->wave->allEnemiesDead()) {
         vector<EnemyFighter*> * loe;
-        this->initializeEnemyList(loe);
+        this->initializeEnemyList(&loe);
         this->wave = new Wave(loe);
     }
     return count;
@@ -97,11 +98,12 @@ void FightersManager::shoot() {
 }
 
 // initialize 5 enemies
-void FightersManager::initializeEnemyList(vector<EnemyFighter*> * loe) {
-    loe  = new vector<EnemyFighter*>();
+void FightersManager::initializeEnemyList(vector<EnemyFighter*> ** loe) {
+    *loe  = new vector<EnemyFighter*>();
     
     int i;
     
+
     
     vector<Cell*> * voc = this->map->getRightMostCells();
     
@@ -109,11 +111,15 @@ void FightersManager::initializeEnemyList(vector<EnemyFighter*> * loe) {
         // to do
         int r = rand() % voc->size();
         
-        loe->push_back(new EnemyFighter(voc->at(r), 20, LEFT));
+        (*loe)->push_back(new EnemyFighter(voc->at(r), 20, LEFT));
         
         
         voc->erase(voc->begin() + r);
     }
+    
+   
+    
+    
 }
 
 ProjectileManager * FightersManager::getProjectileManager() {
