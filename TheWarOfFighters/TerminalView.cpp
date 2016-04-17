@@ -60,8 +60,8 @@ void TerminalView::render() {
     
 //    printw("Hi%d\n", enemy_pos->size());
     for(int i = 0; i < enemy_pos->size(); i++) {
-//        mvaddch(this->enemy_pos->at(i)->getX(),this->enemy_pos->at(i)->getY(),this->enemy_char);
-        mvaddch(this->player_pos->getX(),this->enemy_pos->at(i)->getY(),this->enemy_char);
+        mvaddch(this->enemy_pos->at(i)->getX(),this->enemy_pos->at(i)->getY(),this->enemy_char);
+        
         
 //        printw("enemy[%d]: (%d, %d)\n", i, this->enemy_pos->at(i)->getX(), this->enemy_pos->at(i)->getY());
 //        printw("%p\n", enemy_pos->at(i));
