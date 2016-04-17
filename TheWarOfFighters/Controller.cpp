@@ -87,7 +87,7 @@ void Controller::startLoop() {
         }
     }
     this->view->endGame();
-    sleep(2000);
+    getch();
     delete(this->view);
     delete(this->iwom);
     delete (this->adapter);
