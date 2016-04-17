@@ -126,6 +126,7 @@ ProjectileManager * FightersManager::getProjectileManager() {
     return this->pm;
 }
 vector<EnemyFighter*> * FightersManager::getEnemyFighters() {
+
     return this->wave->getEnemies();
 }
 

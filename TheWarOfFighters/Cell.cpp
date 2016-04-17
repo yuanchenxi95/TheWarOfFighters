@@ -11,8 +11,8 @@
 
 Cell::Cell(int x, int y) {
     
-    this->posX = x;
-    this->posY = y;
+    this->posX = y;
+    this->posY = x;
 }
 
 Cell::~Cell() {

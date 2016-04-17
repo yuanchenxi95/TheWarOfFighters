@@ -37,6 +37,8 @@ void IWOFModel::shoot() {
 }
 
 vector<EnemyFighter*> * IWOFModel::getEnemyFighterList() {
+    
+   
     return this->fm->getEnemyFighters();
 }
 

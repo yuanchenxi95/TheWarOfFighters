@@ -10,6 +10,9 @@
 
 
 Wave::Wave(vector<EnemyFighter*>* lof) {
+    
+    
+    
     this->lof = lof;}
 
 Wave::~Wave() {
@@ -37,6 +40,7 @@ bool Wave::allEnemiesDead() {
 
 // get the enemy list
 vector<EnemyFighter *> * Wave::getEnemies() {
+    
     return this->lof;
 }
 
