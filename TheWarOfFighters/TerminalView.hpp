@@ -34,5 +34,6 @@ public:
     void createFighter();
     void render();//?
     void update();
+    int count = 0;
 };
 #endif /* TerminalView_hpp */

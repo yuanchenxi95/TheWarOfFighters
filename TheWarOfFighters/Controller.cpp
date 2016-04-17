@@ -25,7 +25,7 @@ void Controller::handleKeys(){
     switch (ch) {
         case KEY_LEFT:
             this->iwom->moveLeft();
-//            this->adapter->ModelToViewModel();
+//            printw("%d,%d\n",this->iwom->getPlayerFighter()->getPosition()->getX(), this->iwom->getPlayerFighter()->getPosition()->getY());
             break;
         case KEY_RIGHT:
             this->iwom->moveRight();

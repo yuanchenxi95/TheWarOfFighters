@@ -54,7 +54,9 @@ void TerminalView::createMap() {
 }
 
 void TerminalView::render() {
+    this->update();
     mvaddch(this->player_pos->getX(), this->player_pos->getY(), this->figher_char);
+    printw("(%d,%d)\n", this->player_pos->getX(), this->player_pos->getY());
     
 //    printw("Hi%d\n", enemy_pos->size());
     for(int i = 0; i < enemy_pos->size(); i++) {

@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "IFighter.hpp"
 
+
 enum PlayerFighterType {
     ALIVEPLAYER,
     DEADPLAYER,

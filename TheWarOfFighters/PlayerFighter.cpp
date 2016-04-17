@@ -47,14 +47,16 @@ void PlayerFighter::updateFighter() {
 }
 
 void PlayerFighter::moveUp() {
-    this->position->getUp();
+    this->position = this->position->getUp();
 }
 void PlayerFighter::moveDown() {
-    this->position->getDown();
+    this->position = this->position->getDown();
+    
 }
 void PlayerFighter::moveLeft() {
-    this->position->getLeft();
+    this->position = this->position->getLeft();
+    
 }
 void PlayerFighter::moveRight() {
-    this->position->getRight();
+    this->position = this->position->getRight();
 }
