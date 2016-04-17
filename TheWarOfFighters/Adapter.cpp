@@ -24,7 +24,6 @@ ViewModel* Adapter::ModelToViewModel(IWOFModel* adaptee) {
     Cell* playerFighterPos = adaptee->getPlayerFighter()->getPosition();
     std::vector<EnemyFighter*> * enemyList = adaptee->getEnemyFighterList();
     std::vector<Cell*> * enemyPosList = new vector<Cell*>(enemyList->size());
-    std::cout<<enemyList->size()<<"\n";
     for (int i = 0; i < enemyList->size(); i++) {
         enemyPosList->push_back(enemyList->at(0)->getPosition());
     }

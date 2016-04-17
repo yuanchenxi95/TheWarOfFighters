@@ -58,11 +58,11 @@ void Controller::welcome() {
     this->startLoop();
 }
 void Controller::startLoop() {
+    clear();
     while(this->iwom->getGameState() != QUIT) {
         
         switch (this->iwom->getGameState()) {
             case PLAYING:
-                printw("playing\n");
                 this->handleKeys();
                 time(&curTime2);
                 if (curTime2 - curTime >= 1) {
