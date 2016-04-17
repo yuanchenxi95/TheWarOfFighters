@@ -14,10 +14,13 @@
 #include "ViewModel.hpp"
 class Adapter {
 public:
-    Adapter(IWOFModel* adaptee);
+    Adapter(IWOFModel* adaptee, ViewModel* vm);
     ~Adapter();
+    void ModelToViewModel();
+    
+private:
+    ViewModel* vm;
     IWOFModel* adaptee;
-    ViewModel* ModelToViewModel(IWOFModel* adaptee);
     
 };
 #endif /* Adapter_hpp */

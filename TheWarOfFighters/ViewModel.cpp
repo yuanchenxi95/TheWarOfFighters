@@ -9,14 +9,7 @@
 #include "ViewModel.hpp"
 #include <vector>
 #include "Cell.hpp"
-ViewModel::ViewModel(int row_size, int col_size, Cell* player_pos,
-                     vector<Cell*> * enemy_pos, std::vector<Cell*> * projectilePos, GameState gs) {
-    this->row_size = row_size;
-    this->col_size = col_size;
-    this->player_pos = player_pos;
-    this->enemy_pos = enemy_pos;
-    this->projectilePos = projectilePos;
-    this->gs = gs;
+ViewModel::ViewModel() {
     
 }
 int ViewModel::get_row_size() {
@@ -41,4 +34,14 @@ std::vector<Cell*> * ViewModel::getProjectilePos() {
 
 ViewModel::~ViewModel() {
     
+}
+
+void ViewModel::update(int row_size, int col_size, Cell* player_pos,
+                       vector<Cell*> * enemy_pos, std::vector<Cell*> * projectilePos, GameState gs) {
+    this->row_size = row_size;
+    this->col_size = col_size;
+    this->player_pos = player_pos;
+    this->enemy_pos = enemy_pos;
+    this->projectilePos = projectilePos;
+    this->gs = gs;
 }

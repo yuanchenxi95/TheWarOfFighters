@@ -26,28 +26,13 @@ public:
     ViewModel* vm;
     TerminalView(ViewModel* vm);
     ~TerminalView();
-    void welcome();
-    void initialize();
-    void endGame();
-    void clear();
-    void createMap();
-    void movePlayerUp();
-    void movePlayerDown();
-    void movePlayerLeft();
-    void movePlayerRight();
-    void moveFighter();
+    void welcome();///
+    void initialize();///
+    void endGame();///
+    void clear();///
+    void createMap();//?
     void createFighter();
-    void render();
-    //todo
-    // generate player projectile
-    // move player projectile
-    // generate enemy projectile
-    // move enemy projectile
-    // lost title
-    // beginning title
-    // win title
-    // round title
-    // fighter destroied
-    //
+    void render();//?
+    void update();
 };
 #endif /* TerminalView_hpp */

@@ -24,13 +24,14 @@ private:
 
 public:
     //TODO status
-    ViewModel(int row_size, int col_size, Cell* player_pos,
-              std::vector<Cell*> * enemy_pos, std::vector<Cell*> * projectilePos, GameState gs);
+    ViewModel();
     ~ViewModel();
     int get_row_size();
     int get_col_size();
     Cell* get_player_pos();
     std::vector<Cell*> *get_enemy_pos();
     std::vector<Cell*> * getProjectilePos();
+    void update(int row_size, int col_size, Cell* player_pos,
+                vector<Cell*> * enemy_pos, std::vector<Cell*> * projectilePos, GameState gs);
 };
 #endif /* ViewModel_hpp */

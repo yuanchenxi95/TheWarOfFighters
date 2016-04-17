@@ -11,11 +11,9 @@
 #include "ViewModel.hpp"
 TerminalView::TerminalView(ViewModel* vm) {
     this->vm = vm;
-    this->col_size = vm->get_col_size();
-    this->row_size = vm->get_row_size();
-    this->player_pos = vm->get_player_pos();
-    this-> enemy_pos = vm->get_enemy_pos();
-    this-> projectilePos = vm->getProjectilePos();
+    this->update();
+
+    //TODO update
     
 
 }
@@ -70,3 +68,12 @@ void TerminalView::render() {
 //        mvaddch(this->projectilePos->at(i)->getX(), this->projectilePos->at(i)->getX(), this->bullet_char);
 //    }
 }
+
+void TerminalView::update() {
+    this->col_size = vm->get_col_size();
+    this->row_size = vm->get_row_size();
+    this->player_pos = vm->get_player_pos();
+    this-> enemy_pos = vm->get_enemy_pos();
+    this-> projectilePos = vm->getProjectilePos();
+}
+

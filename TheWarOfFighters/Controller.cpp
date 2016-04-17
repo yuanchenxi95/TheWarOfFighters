@@ -11,8 +11,9 @@
 
 Controller::Controller() {
     this->iwom = new IWOFModel(15, 35);
-    this->adapter = new Adapter(iwom);
-    this->vm = adapter->ModelToViewModel(iwom);
+    this->vm = new ViewModel();
+    this->adapter = new Adapter(iwom, vm);
+    adapter->ModelToViewModel();
     time(&this->startTime);
     this->curTime = this->startTime;
     this->view = new TerminalView(vm);
@@ -24,6 +25,7 @@ void Controller::handleKeys(){
     switch (ch) {
         case KEY_LEFT:
             this->iwom->moveLeft();
+//            this->adapter->ModelToViewModel();
             break;
         case KEY_RIGHT:
             this->iwom->moveRight();
@@ -63,12 +65,11 @@ void Controller::startLoop() {
         
         switch (this->iwom->getGameState()) {
             case PLAYING:
-                this->handleKeys();
                 time(&curTime2);
                 if (curTime2 - curTime >= 1) {
+                    this->handleKeys();
                     this->iwom->tick();
-                    this->adapter = new Adapter(iwom);
-                    this->vm = adapter->ModelToViewModel(iwom);
+                    adapter->ModelToViewModel();
                     this->view->render();
                 }
                 curTime = curTime2;
@@ -76,8 +77,7 @@ void Controller::startLoop() {
                 break;
             case GAMEMOVER:
                 this->iwom->setGameState(GAMEMOVER);
-                this->adapter = new Adapter(iwom);
-                this->vm = adapter->ModelToViewModel(iwom);
+                adapter->ModelToViewModel();
                 this->view->render();
                 // TO-DO
                 // add game over text to the view.

@@ -9,15 +9,16 @@
 #include "Adapter.hpp"
 #include <vector>
 #include <iostream>
-Adapter::Adapter(IWOFModel* adaptee) {
+Adapter::Adapter(IWOFModel* adaptee, ViewModel* vm) {
     this->adaptee = adaptee;
+    this->vm = vm;
 }
 
 Adapter::~Adapter(){
     
 }
 
-ViewModel* Adapter::ModelToViewModel(IWOFModel* adaptee) {
+void Adapter::ModelToViewModel() {
     int row_size = adaptee->getBoard()->at(0)->size();
     int col_size = adaptee->getBoard()->size();
     GameState gs = adaptee->getGameState();
@@ -33,5 +34,5 @@ ViewModel* Adapter::ModelToViewModel(IWOFModel* adaptee) {
     for (int i = 0; i < projectList->size(); i++) {
         projectilePos->push_back(projectList->at(i)->getPosition());
     }
-    return new ViewModel(row_size, col_size, playerFighterPos, enemyPosList, projectilePos, gs);
+    vm->update(row_size, col_size, playerFighterPos, enemyPosList, projectilePos, gs);
 }
