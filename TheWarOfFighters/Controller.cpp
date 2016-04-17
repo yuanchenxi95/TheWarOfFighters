@@ -16,10 +16,11 @@ Controller::Controller() {
     time(&this->startTime);
     this->curTime = this->startTime;
     this->view = new TerminalView(vm);
+    this->view->initialize();
 }
 
 void Controller::handleKeys(){
-    char ch = getch();
+    int ch = getch();
     switch (ch) {
         case KEY_LEFT:
             this->iwom->moveLeft();
@@ -48,18 +49,21 @@ Controller::~Controller(){
     delete this->iwom;
 }
 void Controller::welcome() {
-    view->welcome();
+    this->view->welcome();
     int ch = getch();
-    clear();
+    if(ch == 'Q' or ch == 'q') {
+        this->iwom->setGameState(QUIT);
+
+    }
     this->startLoop();
-    view->endGame();
 }
 void Controller::startLoop() {
     while(this->iwom->getGameState() != QUIT) {
         
         switch (this->iwom->getGameState()) {
-                this->handleKeys();
             case PLAYING:
+                printw("playing\n");
+                this->handleKeys();
                 time(&curTime2);
                 if (curTime2 - curTime >= 1) {
                     this->iwom->tick();
@@ -82,4 +86,7 @@ void Controller::startLoop() {
                 break;
         }
     }
+
+    this->view->endGame();
+
 }

@@ -31,7 +31,7 @@ int main(int argc, const char * argv[]) {
 //    main_game(figher_char, row, col, ch);
 //    endwin();
     Controller *c = new Controller();
-//    c->welcome();
+    c->welcome();
     
     return 0;
 }

@@ -17,13 +17,6 @@ TerminalView::TerminalView(ViewModel* vm) {
     this-> enemy_pos = vm->get_enemy_pos();
     this-> projectilePos = vm->getProjectilePos();
     
-    //initialize ncurses status
-    clear();
-    initscr();
-    noecho();
-    cbreak();
-    keypad(stdscr, TRUE);
-    curs_set(0);
 
 }
 
@@ -51,6 +44,7 @@ void TerminalView::welcome(){
 
 
 void TerminalView::endGame() {
+    printw("the game has quit\n");
     endwin();
 }
 

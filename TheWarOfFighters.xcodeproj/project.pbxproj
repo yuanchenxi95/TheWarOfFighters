@@ -20,7 +20,7 @@
 		12E4F1B01CB3FA8700541BBF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12E4F1AF1CB3FA8700541BBF /* main.cpp */; };
 		12E4F1B81CB3FA9A00541BBF /* Cell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12E4F1B61CB3FA9A00541BBF /* Cell.cpp */; };
 		906FFA841CBECF4A003FE924 /* Adapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 906FFA821CBECF4A003FE924 /* Adapter.cpp */; };
-		90F00A461CB714C80014CB90 /* libncurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F00A451CB714C80014CB90 /* libncurses.tbd */; };
+		90D1799A1CC2E0C200B56D2A /* libncurses.5.4.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D179991CC2E0C200B56D2A /* libncurses.5.4.tbd */; };
 		90F00A4A1CB716260014CB90 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90F00A481CB716260014CB90 /* Controller.cpp */; };
 		90F00A4E1CB71C5C0014CB90 /* TerminalView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90F00A4C1CB71C5C0014CB90 /* TerminalView.cpp */; };
 		90F00A511CB71CBD0014CB90 /* ViewModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90F00A4F1CB71CBD0014CB90 /* ViewModel.cpp */; };
@@ -65,6 +65,7 @@
 		12E4F1B71CB3FA9A00541BBF /* Cell.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Cell.hpp; sourceTree = "<group>"; };
 		906FFA821CBECF4A003FE924 /* Adapter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Adapter.cpp; sourceTree = "<group>"; };
 		906FFA831CBECF4A003FE924 /* Adapter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Adapter.hpp; sourceTree = "<group>"; };
+		90D179991CC2E0C200B56D2A /* libncurses.5.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.5.4.tbd; path = usr/lib/libncurses.5.4.tbd; sourceTree = SDKROOT; };
 		90F00A451CB714C80014CB90 /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
 		90F00A481CB716260014CB90 /* Controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Controller.cpp; sourceTree = "<group>"; };
 		90F00A491CB716260014CB90 /* Controller.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Controller.hpp; sourceTree = "<group>"; };
@@ -79,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90F00A461CB714C80014CB90 /* libncurses.tbd in Frameworks */,
+				90D1799A1CC2E0C200B56D2A /* libncurses.5.4.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +167,7 @@
 		12E4F1A31CB3FA8700541BBF = {
 			isa = PBXGroup;
 			children = (
+				90D179991CC2E0C200B56D2A /* libncurses.5.4.tbd */,
 				90F00A451CB714C80014CB90 /* libncurses.tbd */,
 				12E4F1AE1CB3FA8700541BBF /* TheWarOfFighters */,
 				12E4F1AD1CB3FA8700541BBF /* Products */,
@@ -223,6 +225,7 @@
 				12E4F1A81CB3FA8700541BBF /* Sources */,
 				12E4F1A91CB3FA8700541BBF /* Frameworks */,
 				12E4F1AA1CB3FA8700541BBF /* CopyFiles */,
+				90D1799B1CC2E32400B56D2A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -263,6 +266,22 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		90D1799B1CC2E32400B56D2A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		12E4F1A81CB3FA8700541BBF /* Sources */ = {
