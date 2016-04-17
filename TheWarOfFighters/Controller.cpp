@@ -22,6 +22,7 @@ Controller::Controller() {
 
 void Controller::handleKeys(){
     int ch = getch();
+
     switch (ch) {
         case KEY_LEFT:
             this->iwom->moveLeft();
@@ -66,7 +67,7 @@ void Controller::startLoop() {
         switch (this->iwom->getGameState()) {
             case PLAYING:
                 time(&curTime2);
-                if (curTime2 - curTime >= 1) {
+                if (curTime2 - curTime >= 0.001) {
                     this->handleKeys();
                     this->iwom->tick();
                     adapter->ModelToViewModel();

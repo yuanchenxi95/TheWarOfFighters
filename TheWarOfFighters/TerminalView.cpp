@@ -31,6 +31,7 @@ void TerminalView::initialize() {
     initscr();
     noecho();
     cbreak();
+    nodelay(stdscr, TRUE);
     keypad(stdscr, TRUE);
     curs_set(0);
 }
@@ -54,16 +55,13 @@ void TerminalView::createMap() {
 }
 
 void TerminalView::render() {
+    clear();
     this->update();
     mvaddch(this->player_pos->getX(), this->player_pos->getY(), this->figher_char);
     printw("(%d,%d)\n", this->player_pos->getX(), this->player_pos->getY());
-    
-//    printw("Hi%d\n", enemy_pos->size());
     for(int i = 0; i < enemy_pos->size(); i++) {
         mvaddch(this->enemy_pos->at(i)->getX(),this->enemy_pos->at(i)->getY(),this->enemy_char);
         
-//        printw("enemy[%d]: (%d, %d)\n", i, this->enemy_pos->at(i)->getX(), this->enemy_pos->at(i)->getY());
-//        printw("%p\n", enemy_pos->at(i));
     }
 
 //    for (int i = 0; i < projectilePos->size(); i++) {
