@@ -9,12 +9,14 @@
 #include "Controller.hpp"
 #include <ncurses.h>
 
+
+
 Controller::Controller() {
     this->iwom = new IWOFModel(15, 35);
     this->vm = new ViewModel();
     this->adapter = new Adapter(iwom, vm);
     adapter->ModelToViewModel();
-    time(&this->startTime);
+    this->startTime = high_resolution_clock::now();
     this->curTime = this->startTime;
     this->view = new TerminalView(vm);
     this->view->initialize();
@@ -61,19 +63,27 @@ void Controller::welcome() {
     this->startLoop();
 }
 void Controller::startLoop() {
+    
     clear();
+    // the duration of the time
+    duration<double> time_span;
+    
     while(this->iwom->getGameState() != QUIT) {
         
         switch (this->iwom->getGameState()) {
             case PLAYING:
-                time(&curTime2);
-                if (curTime2 - curTime >= 0.001) {
+                curTime2 = high_resolution_clock::now();
+                
+                
+                time_span = duration_cast<duration<double>>(curTime2 - curTime);
+                if (time_span.count() >= 0.1) {
+                
                     this->handleKeys();
                     this->iwom->tick();
                     adapter->ModelToViewModel();
                     this->view->render();
+                    curTime = curTime2;
                 }
-                curTime = curTime2;
 
                 break;
             case GAMEMOVER:

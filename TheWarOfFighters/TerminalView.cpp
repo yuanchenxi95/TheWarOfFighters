@@ -57,16 +57,20 @@ void TerminalView::createMap() {
 void TerminalView::render() {
     clear();
     this->update();
-    mvaddch(this->player_pos->getX(), this->player_pos->getY(), this->figher_char);
-    printw("(%d,%d)\n", this->player_pos->getX(), this->player_pos->getY());
+    for (int i = 0; i < projectilePos->size(); i++) {
+        mvaddch(this->projectilePos->at(i)->getX(), this->projectilePos->at(i)->getY(), this->bullet_char);
+    }
+    
+    //    printw("(%d,%d)\n", this->player_pos->getX(), this->player_pos->getY());
     for(int i = 0; i < enemy_pos->size(); i++) {
         mvaddch(this->enemy_pos->at(i)->getX(),this->enemy_pos->at(i)->getY(),this->enemy_char);
         
     }
+    
+    mvaddch(this->player_pos->getX(), this->player_pos->getY(), this->figher_char);
 
-//    for (int i = 0; i < projectilePos->size(); i++) {
-//        mvaddch(this->projectilePos->at(i)->getX(), this->projectilePos->at(i)->getX(), this->bullet_char);
-//    }
+
+
 }
 
 void TerminalView::update() {

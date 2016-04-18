@@ -14,6 +14,8 @@
 #include <time.h>
 #include "Adapter.hpp"
 #include "TerminalView.hpp"
+#include <chrono>
+using namespace std::chrono;
 
 class Controller {
 public:
@@ -29,8 +31,8 @@ protected:
     ViewModel * vm;
     TerminalView * view;
     Adapter * adapter;
-    time_t startTime;
-    time_t curTime;
-    time_t curTime2;
+    high_resolution_clock::time_point startTime;
+    high_resolution_clock::time_point curTime;
+    high_resolution_clock::time_point curTime2;
 };
 #endif /* Controller_hpp */

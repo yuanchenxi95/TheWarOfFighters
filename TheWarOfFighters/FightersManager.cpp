@@ -18,7 +18,7 @@ FightersManager::FightersManager(ProjectileManager * p, Map * map) {
 
     this->wave = new Wave(loe);
     Cell * playerCell = this->map->getMap()->at(map->height / 2)->at(0);
-    this->player = new PlayerFighter(playerCell, 100, RIGHT);
+    this->player = new PlayerFighter(playerCell, 1000, RIGHT);
 }
 
 FightersManager::~FightersManager() {
@@ -32,7 +32,7 @@ int FightersManager::tick() {
     
     int count = this->wave->move();
     this->addProjectile();
-    this->shoot();
+//    this->shoot();
     
     this->pm->tickLop();
     // to-do damage the fighters
@@ -70,12 +70,21 @@ void FightersManager::hitFighter() {
                     ef->damageThisFighter(p->getDamage());
                 }
                 
-                if (playPos->getX() == pe->getX() && playPos->getY() == pe->getY()) {
-                    pf->setPlaterState(DEADPLAYER);
-                    ef->setEnemyType(DEADENEMYFIGHTER);
-                }
+                
                 
             }
+        }
+        
+        
+    }
+    
+    for (EnemyFighter * ef : *voef) {
+        Cell * pe = ef->getPosition();
+        Cell * playPos = pf->getPosition();
+
+        if (playPos->getX() == pe->getX() && playPos->getY() == pe->getY()) {
+            pf->damageThisFighter(1);
+            ef->setEnemyType(DEADENEMYFIGHTER);
         }
         
         
@@ -97,6 +106,8 @@ void FightersManager::shoot() {
                                       this->player->getDirection()));
 }
 
+
+
 // initialize 5 enemies
 void FightersManager::initializeEnemyList(vector<EnemyFighter*> ** loe) {
     *loe  = new vector<EnemyFighter*>();
@@ -111,7 +122,7 @@ void FightersManager::initializeEnemyList(vector<EnemyFighter*> ** loe) {
         // to do
         int r = rand() % voc->size();
         
-        (*loe)->push_back(new EnemyFighter(voc->at(r), 20, LEFT));
+        (*loe)->push_back(new EnemyFighter(voc->at(r), 1, LEFT));
         
         
         voc->erase(voc->begin() + r);
