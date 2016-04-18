@@ -31,12 +31,13 @@ void TerminalView::initialize() {
     initscr();
     noecho();
     cbreak();
-    nodelay(stdscr, TRUE);
     keypad(stdscr, TRUE);
     curs_set(0);
 }
 
-
+void TerminalView::setNoDelay() {
+    nodelay(stdscr, TRUE);
+}
 void TerminalView::welcome(){
     printw ("Welcome to the War of Figher game!\n Press any key to start.\npress q or Q to quit.\n");
 }

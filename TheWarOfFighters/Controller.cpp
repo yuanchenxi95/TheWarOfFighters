@@ -60,6 +60,7 @@ void Controller::welcome() {
         this->iwom->setGameState(QUIT);
 
     }
+    this->view->setNoDelay();
     this->startLoop();
 }
 void Controller::startLoop() {
