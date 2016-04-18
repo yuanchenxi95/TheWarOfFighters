@@ -68,8 +68,13 @@ void TerminalView::render() {
         
     }
     
+    
     mvaddch(this->player_pos->getX(), this->player_pos->getY(), this->figher_char);
-
+    mvprintw(this->vm->get_col_size(),this->vm->get_row_size()/2,"%d\n",this->vm->getScore());
+    int curHp = this->vm->getHP();
+    for(int i = 0; i < curHp; i++) {
+        mvaddch(this->vm->get_col_size(), i, NCURSES_ACS(ACS_CKBOARD));
+    }
 
 
 }
@@ -80,5 +85,14 @@ void TerminalView::update() {
     this->player_pos = vm->get_player_pos();
     this-> enemy_pos = vm->get_enemy_pos();
     this-> projectilePos = vm->getProjectilePos();
+}
+
+void TerminalView::gameOver() {
+    clear();
+    nodelay(stdscr, FALSE);
+    printw("GAME OVER!!\nYour Score:%d", this->vm->getScore());
+    int ch = getch();
+    sleep(2);
+    endwin();
 }
 

@@ -18,7 +18,7 @@ FightersManager::FightersManager(ProjectileManager * p, Map * map) {
 
     this->wave = new Wave(loe);
     Cell * playerCell = this->map->getMap()->at(map->height / 2)->at(0);
-    this->player = new PlayerFighter(playerCell, 1000, RIGHT);
+    this->player = new PlayerFighter(playerCell, 16, RIGHT);
 }
 
 FightersManager::~FightersManager() {

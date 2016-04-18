@@ -21,6 +21,8 @@ Adapter::~Adapter(){
 void Adapter::ModelToViewModel() {
     int row_size = adaptee->getBoard()->at(0)->size();
     int col_size = adaptee->getBoard()->size();
+    int score = adaptee->getScore();
+    int hp = adaptee->getPlayerFighter()->getHealth();
     GameState gs = adaptee->getGameState();
     Cell* playerFighterPos = adaptee->getPlayerFighter()->getPosition();
     std::vector<EnemyFighter*> * enemyList = adaptee->getEnemyFighterList();
@@ -34,5 +36,5 @@ void Adapter::ModelToViewModel() {
     for (int i = 0; i < projectList->size(); i++) {
         projectilePos->push_back(projectList->at(i)->getPosition());
     }
-    vm->update(row_size, col_size, playerFighterPos, enemyPosList, projectilePos, gs);
+    vm->update(row_size, col_size, playerFighterPos, enemyPosList, projectilePos, gs, score, hp);
 }
