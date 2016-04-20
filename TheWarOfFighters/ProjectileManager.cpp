@@ -10,12 +10,12 @@
 
 
 ProjectileManager::ProjectileManager() {
-    this->lop = new vector<IProjectile*>();
+    this->lop = new std::vector<IProjectile*>();
 }
 
 ProjectileManager::~ProjectileManager() {
     
-    typename vector<IProjectile*>::iterator iter= this->lop->begin();
+    typename std::vector<IProjectile*>::iterator iter= this->lop->begin();
     while(iter != lop->end()) {
         delete(*iter);
         ++iter;
@@ -24,15 +24,15 @@ ProjectileManager::~ProjectileManager() {
 }
 
 // get the list of projectiles in this manager
-vector<IProjectile*> * ProjectileManager::getLop() {
+std::vector<IProjectile*> * ProjectileManager::getLop() {
     return this->lop;
 }
 
 // tick projectiles
-vector<IProjectile*> * ProjectileManager::tickLop() {
+std::vector<IProjectile*> * ProjectileManager::tickLop() {
     
     
-    vector<IProjectile*> * nlop = new vector<IProjectile*>();
+    std::vector<IProjectile*> * nlop = new std::vector<IProjectile*>();
     for(IProjectile * p : *this->lop) {
         if (!p->tickProjectile()) {
             nlop->push_back(p);
@@ -48,7 +48,7 @@ vector<IProjectile*> * ProjectileManager::tickLop() {
 }
 
 // add the projectile to the manager
-vector<IProjectile*> * ProjectileManager::addProj(IProjectile * p) {
+std::vector<IProjectile*> * ProjectileManager::addProj(IProjectile * p) {
     this->lop->push_back(p);
     return this->lop;
 }

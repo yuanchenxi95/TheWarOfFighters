@@ -30,7 +30,7 @@ public:
     void shoot();
     
     ProjectileManager * getProjectileManager();
-    vector<EnemyFighter*> * getEnemyFighters();
+    std::vector<EnemyFighter*> * getEnemyFighters();
     Map * getMap();
     PlayerFighter * getPlayerFighter();
     void hitFighter();
@@ -46,7 +46,7 @@ private:
     PlayerFighter * player;
     
     void addProjectile();
-    void initializeEnemyList(vector<EnemyFighter*> **);
+    void initializeEnemyList(std::vector<EnemyFighter*> **);
     
 };
 

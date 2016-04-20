@@ -28,11 +28,11 @@ public:
     ~IWOFModel();
     
     
-    vector<vector<Cell*>*> * getBoard();
+    std::vector<std::vector<Cell*>*> * getBoard();
     void shoot();
-    vector<EnemyFighter*> * getEnemyFighterList();
+    std::vector<EnemyFighter*> * getEnemyFighterList();
     PlayerFighter * getPlayerFighter();
-    vector<IProjectile*> * getProjectList();
+    std::vector<IProjectile*> * getProjectList();
     int getPlayerHealth();
     int getScore();
     

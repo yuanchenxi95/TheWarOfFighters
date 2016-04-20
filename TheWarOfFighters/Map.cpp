@@ -11,7 +11,7 @@
 
 Map::Map(int height, int width) {
     if (height < 5 || width < 5) {
-        cerr << "Map must be bigger than 5 * 5" << endl;
+        std::cerr << "Map must be bigger than 5 * 5" << std::endl;
     }
     
     this->height = height;
@@ -20,7 +20,7 @@ Map::Map(int height, int width) {
 }
 
 Map::~Map() {
-    for (vector<Cell*> * v: *this->voc) {
+    for (std::vector<Cell*> * v: *this->voc) {
         v->clear();
     }
     
@@ -28,13 +28,13 @@ Map::~Map() {
     delete voc;
 }
 
-vector<vector<Cell *>*> * Map::getMap() {
+std::vector<std::vector<Cell *>*> * Map::getMap() {
     return this->voc;
 }
 
-vector<Cell *> * Map::getRightMostCells() {
+std::vector<Cell *> * Map::getRightMostCells() {
     int i;
-    vector<Cell *> * rightMostCells = new vector<Cell*>();
+    std::vector<Cell *> * rightMostCells = new std::vector<Cell*>();
     for (i = 0; i < this->height; i++) {
         rightMostCells->push_back(this->voc->at(i)->at(this->width-1));
     }
@@ -43,9 +43,9 @@ vector<Cell *> * Map::getRightMostCells() {
     
 }
 
-vector<Cell *> * Map::getLeftMostCells() {
+std::vector<Cell *> * Map::getLeftMostCells() {
     int i;
-    vector<Cell *> * leftMostCells = new vector<Cell*>();
+    std::vector<Cell *> * leftMostCells = new std::vector<Cell*>();
     for (i = 0; i < this->height; i++) {
         leftMostCells->push_back(this->voc->at(i)->at(0));
     }
@@ -55,12 +55,12 @@ vector<Cell *> * Map::getLeftMostCells() {
 
 void Map::initializeMap(int width, int height) {
     
-    voc = new vector<vector<Cell*>*>();
+    voc = new std::vector<std::vector<Cell*>*>();
     
     
     int i, j;
     for (i = 0; i < height; i++) {
-        voc->push_back(new vector<Cell*>);
+        voc->push_back(new std::vector<Cell*>);
         
         for (j = 0; j < width; j++) {
             voc->at(i)->push_back(new Cell(j, i));

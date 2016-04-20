@@ -12,7 +12,6 @@
 #include <stdio.h>
 #include <vector>
 #include "IProjectile.hpp"
-using namespace std;
 
 class ProjectileManager {
 public:
@@ -20,17 +19,17 @@ public:
     ~ProjectileManager();
     
     // get the list of projectiles in this manager
-    vector<IProjectile*> * getLop();
+    std::vector<IProjectile*> * getLop();
     
     // tick projectiles
-    vector<IProjectile*> * tickLop();
+    std::vector<IProjectile*> * tickLop();
     
     // add the projectile to the manager
-    vector<IProjectile*> * addProj(IProjectile * p);
+    std::vector<IProjectile*> * addProj(IProjectile * p);
     
     
 protected:
-    vector<IProjectile*> * lop;
+    std::vector<IProjectile*> * lop;
     
 private:
     

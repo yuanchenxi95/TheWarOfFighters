@@ -13,7 +13,7 @@ FightersManager::FightersManager(ProjectileManager * p, Map * map) {
     this->pm = p;
     this->map = map;
     
-    vector<EnemyFighter*> * loe;
+    std::vector<EnemyFighter*> * loe;
     this->initializeEnemyList(&loe);
 
     this->wave = new Wave(loe);
@@ -39,7 +39,7 @@ int FightersManager::tick() {
     this->hitFighter();
     
     if (this->wave->allEnemiesDead()) {
-        vector<EnemyFighter*> * loe;
+        std::vector<EnemyFighter*> * loe;
         this->initializeEnemyList(&loe);
         this->wave = new Wave(loe);
     }
@@ -47,8 +47,8 @@ int FightersManager::tick() {
 }
 
 void FightersManager::hitFighter() {
-    vector<IProjectile*> * vop = this->pm->getLop();
-    vector<EnemyFighter *> * voef = this->getEnemyFighters();
+    std::vector<IProjectile*> * vop = this->pm->getLop();
+    std::vector<EnemyFighter *> * voef = this->getEnemyFighters();
     PlayerFighter * pf = this->getPlayerFighter();
     
     for (IProjectile * p : * vop) {
@@ -109,14 +109,14 @@ void FightersManager::shoot() {
 
 
 // initialize 5 enemies
-void FightersManager::initializeEnemyList(vector<EnemyFighter*> ** loe) {
-    *loe  = new vector<EnemyFighter*>();
+void FightersManager::initializeEnemyList(std::vector<EnemyFighter*> ** loe) {
+    *loe  = new std::vector<EnemyFighter*>();
     
     int i;
     
 
     
-    vector<Cell*> * voc = this->map->getRightMostCells();
+    std::vector<Cell*> * voc = this->map->getRightMostCells();
     
     for (i = 0; i < 5; i++) {
         // to do
@@ -136,7 +136,7 @@ void FightersManager::initializeEnemyList(vector<EnemyFighter*> ** loe) {
 ProjectileManager * FightersManager::getProjectileManager() {
     return this->pm;
 }
-vector<EnemyFighter*> * FightersManager::getEnemyFighters() {
+std::vector<EnemyFighter*> * FightersManager::getEnemyFighters() {
 
     return this->wave->getEnemies();
 }

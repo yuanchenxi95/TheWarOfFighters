@@ -15,11 +15,10 @@
 #include <vector>
 #include "Counter.hpp"
 
-using namespace std;
 
 class Wave{
 public:
-    Wave(vector<EnemyFighter*>*);
+    Wave(std::vector<EnemyFighter*>*);
     ~Wave();
 
     
@@ -30,7 +29,7 @@ public:
     bool allEnemiesDead();
     
     // get the enemy list
-    vector<EnemyFighter *> * getEnemies();
+    std::vector<EnemyFighter *> * getEnemies();
     
     // move and spawn the enemy, return how many enemies were killed in this wave
     int move();
@@ -38,7 +37,7 @@ public:
 private:
 
     
-    vector<EnemyFighter*>* lof;
+    std::vector<EnemyFighter*>* lof;
     
     // remove the bad enemies
     int removeBadEnemy();

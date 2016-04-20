@@ -24,13 +24,13 @@ void Adapter::ModelToViewModel() {
     GameState gs = adaptee->getGameState();
     Cell* playerFighterPos = adaptee->getPlayerFighter()->getPosition();
     std::vector<EnemyFighter*> * enemyList = adaptee->getEnemyFighterList();
-    std::vector<Cell*> * enemyPosList = new vector<Cell*>();
+    std::vector<Cell*> * enemyPosList = new std::vector<Cell*>();
     for (int i = 0; i < enemyList->size(); i++) {
         enemyPosList->push_back(enemyList->at(i)->getPosition());
     }
     
     std::vector<IProjectile*> * projectList = adaptee->getProjectList();
-    std::vector<Cell*> * projectilePos = new vector<Cell*>();
+    std::vector<Cell*> * projectilePos = new std::vector<Cell*>();
     for (int i = 0; i < projectList->size(); i++) {
         projectilePos->push_back(projectList->at(i)->getPosition());
     }

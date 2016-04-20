@@ -28,7 +28,7 @@ IWOFModel::~IWOFModel() {
     delete map;
 }
 
-vector<vector<Cell*>*> * IWOFModel::getBoard() {
+std::vector<std::vector<Cell*>*> * IWOFModel::getBoard() {
     return this->map->getMap();
 }
 
@@ -36,7 +36,7 @@ void IWOFModel::shoot() {
     this->fm->shoot();
 }
 
-vector<EnemyFighter*> * IWOFModel::getEnemyFighterList() {
+std::vector<EnemyFighter*> * IWOFModel::getEnemyFighterList() {
     
    
     return this->fm->getEnemyFighters();
@@ -46,7 +46,7 @@ PlayerFighter * IWOFModel::getPlayerFighter() {
     return this->fm->getPlayerFighter();
 }
 
-vector<IProjectile*> * IWOFModel::getProjectList() {
+std::vector<IProjectile*> * IWOFModel::getProjectList() {
     return this->pm->getLop();
 }
 

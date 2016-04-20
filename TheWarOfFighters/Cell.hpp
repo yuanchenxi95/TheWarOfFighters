@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 
-using namespace std;
 enum Direction {
     UP,
     DOWN,

@@ -9,7 +9,7 @@
 #include "Wave.hpp"
 
 
-Wave::Wave(vector<EnemyFighter*>* lof) {
+Wave::Wave(std::vector<EnemyFighter*>* lof) {
     
     
     
@@ -39,7 +39,7 @@ bool Wave::allEnemiesDead() {
 }
 
 // get the enemy list
-vector<EnemyFighter *> * Wave::getEnemies() {
+std::vector<EnemyFighter *> * Wave::getEnemies() {
     
     return this->lof;
 }
@@ -64,7 +64,7 @@ int Wave::move() {
 int Wave::removeBadEnemy() {
     int count = 0;
     
-    vector<EnemyFighter*>* newLof = new vector<EnemyFighter*>();
+    std::vector<EnemyFighter*>* newLof = new std::vector<EnemyFighter*>();
 
     
     for (EnemyFighter * f : *this->lof) {

@@ -20,14 +20,14 @@ public:
     Map(int height, int width);
     ~Map();
     
-    vector<vector<Cell *>*> * getMap();
-    vector<Cell *> * getRightMostCells();
-    vector<Cell *> * getLeftMostCells();
+    std::vector<std::vector<Cell *>*> * getMap();
+    std::vector<Cell *> * getRightMostCells();
+    std::vector<Cell *> * getLeftMostCells();
     int height;
     int width;
     
 private:
-    vector<vector<Cell *>*> * voc;
+    std::vector<std::vector<Cell *>*> * voc;
     void initializeMap(int width, int height);
 
     

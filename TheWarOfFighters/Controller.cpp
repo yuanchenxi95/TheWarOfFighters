@@ -16,7 +16,7 @@ Controller::Controller() {
     this->vm = new ViewModel();
     this->adapter = new Adapter(iwom, vm);
     adapter->ModelToViewModel();
-    this->startTime = high_resolution_clock::now();
+    this->startTime = std::chrono::high_resolution_clock::now();
     this->curTime = this->startTime;
     this->view = new TerminalView(vm);
     this->view->initialize();
@@ -66,16 +66,16 @@ void Controller::startLoop() {
     
     clear();
     // the duration of the time
-    duration<double> time_span;
+    std::chrono::duration<double> time_span;
     
     while(this->iwom->getGameState() != QUIT) {
         
         switch (this->iwom->getGameState()) {
             case PLAYING:
-                curTime2 = high_resolution_clock::now();
+                curTime2 = std::chrono::high_resolution_clock::now();
                 
                 
-                time_span = duration_cast<duration<double>>(curTime2 - curTime);
+                time_span = std::chrono::duration_cast<std::chrono::duration<double>>(curTime2 - curTime);
                 if (time_span.count() >= 0.1) {
                 
                     this->handleKeys();
