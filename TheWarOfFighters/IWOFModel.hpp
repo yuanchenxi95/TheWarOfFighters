@@ -54,7 +54,7 @@ public:
 protected:
     
 private:
-    GameState gameState = PLAYING;         // game loop flag
+    GameState gameState;         // game loop flag
     
     FightersManager * fm;
     int score;

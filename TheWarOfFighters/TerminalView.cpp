@@ -11,6 +11,9 @@
 #include "ViewModel.hpp"
 TerminalView::TerminalView(ViewModel* vm) {
     this->vm = vm;
+    this->figher_char ='>';
+    this->bullet_char = '-';
+    this->enemy_char='*';
     this->update();
 
     //TODO update
@@ -58,12 +61,13 @@ void TerminalView::createMap() {
 void TerminalView::render() {
     clear();
     this->update();
-    for (int i = 0; i < projectilePos->size(); i++) {
+    int i;
+    for (i = 0; i < projectilePos->size(); i++) {
         mvaddch(this->projectilePos->at(i)->getX(), this->projectilePos->at(i)->getY(), this->bullet_char);
     }
     
     //    printw("(%d,%d)\n", this->player_pos->getX(), this->player_pos->getY());
-    for(int i = 0; i < enemy_pos->size(); i++) {
+    for(i = 0; i < enemy_pos->size(); i++) {
         mvaddch(this->enemy_pos->at(i)->getX(),this->enemy_pos->at(i)->getY(),this->enemy_char);
         
     }
@@ -72,7 +76,7 @@ void TerminalView::render() {
     mvaddch(this->player_pos->getX(), this->player_pos->getY(), this->figher_char);
     mvprintw(this->vm->get_col_size(),this->vm->get_row_size()/2,"%d\n",this->vm->getScore());
     int curHp = this->vm->getHP();
-    for(int i = 0; i < curHp; i++) {
+    for(i = 0; i < curHp; i++) {
         mvaddch(this->vm->get_col_size(), i, NCURSES_ACS(ACS_CKBOARD));
     }
 

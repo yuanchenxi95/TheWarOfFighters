@@ -12,6 +12,7 @@
 //FightersManager(ProjectileManager * p, Map * map);
 
 IWOFModel::IWOFModel(int height, int width) {
+    gameState = PLAYING;
     this->score = 0;
     this->map = new Map(height, width);
     
