@@ -36,6 +36,6 @@ public:
     std::vector<Cell*> *get_enemy_pos();
     std::vector<Cell*> * getProjectilePos();
     void update(int row_size, int col_size, Cell* player_pos,
-                std::vector<Cell*> * enemy_pos, std::vector<Cell*> * projectilePos, GameState gs);
+                std::vector<Cell*> * enemy_pos, std::vector<Cell*> * projectilePos, GameState gs, int score, int hp);
 };
 #endif /* ViewModel_hpp */

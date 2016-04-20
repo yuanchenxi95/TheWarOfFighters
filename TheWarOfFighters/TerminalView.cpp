@@ -92,7 +92,7 @@ void TerminalView::gameOver() {
     nodelay(stdscr, FALSE);
     printw("GAME OVER!!\nYour Score:%d", this->vm->getScore());
     int ch = getch();
-    sleep(2);
+//    sleep(2);
     endwin();
 }
 

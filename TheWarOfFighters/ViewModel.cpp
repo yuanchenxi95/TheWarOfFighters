@@ -43,7 +43,7 @@ ViewModel::~ViewModel() {
 }
 
 void ViewModel::update(int row_size, int col_size, Cell* player_pos,
-                       std::vector<Cell*> * enemy_pos, std::vector<Cell*> * projectilePos, GameState gs) {
+                       std::vector<Cell*> * enemy_pos, std::vector<Cell*> * projectilePos, GameState gs, int score, int hp) {
     this->row_size = row_size;
     this->col_size = col_size;
     this->player_pos = player_pos;

@@ -119,9 +119,8 @@ void FightersManager::initializeEnemyList(std::vector<EnemyFighter*> ** loe) {
     
     int i;
     
+    std::vector<std::vector<Cell*>*> * curMap = this->map->getMap();
 
-    
-    std::vector<Cell*> * voc = this->map->getRightMostCells();
     
     for (i = 0; i < 5; i++) {
         // to do
