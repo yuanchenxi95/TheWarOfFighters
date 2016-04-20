@@ -7,7 +7,7 @@
 //
 
 #include "FightersManager.hpp"
-
+#include <ncurses.h>
 
 FightersManager::FightersManager(ProjectileManager * p, Map * map) {
     this->pm = p;
@@ -18,7 +18,7 @@ FightersManager::FightersManager(ProjectileManager * p, Map * map) {
 
     this->wave = new Wave(loe);
     Cell * playerCell = this->map->getMap()->at(map->height / 2)->at(0);
-    this->player = new PlayerFighter(playerCell, 1000, RIGHT);
+    this->player = new PlayerFighter(playerCell, 16, RIGHT);
 }
 
 FightersManager::~FightersManager() {
@@ -94,8 +94,13 @@ void FightersManager::hitFighter() {
 }
 
 void FightersManager::addProjectile() {
-    for (EnemyFighter * f : *this->wave->getEnemies()) {
-        this->pm->addProj(new IProjectile(f->getPosition(), f->getDamage(),  ENEMYPORJECTILE, f->getDirection()));
+    int randPoj = rand()%5;
+    int randEnemy = rand()%(this->wave->getEnemies()->size()+1);
+    for (int i = 0; i <this->wave->getEnemies()->size();i++) {
+        if(randPoj  == 0 && i == randEnemy) {
+            EnemyFighter *ef = this->wave->getEnemies()->at(i);
+        this->pm->addProj(new IProjectile(ef->getPosition(), ef->getDamage(),  ENEMYPORJECTILE, ef->getDirection()));
+        }
     }
 }
 
@@ -120,12 +125,13 @@ void FightersManager::initializeEnemyList(std::vector<EnemyFighter*> ** loe) {
     
     for (i = 0; i < 5; i++) {
         // to do
-        int r = rand() % voc->size();
+        //int r = rand() % voc->size();
+        int rX = (rand() %(curMap->at(0)->size()/2))+(curMap->at(0)->size()/2);
+        int rY = rand() % (curMap->size());
+        (*loe)->push_back(new EnemyFighter(curMap->at(rY)->at(rX), 1, LEFT));
         
-        (*loe)->push_back(new EnemyFighter(voc->at(r), 1, LEFT));
         
-        
-        voc->erase(voc->begin() + r);
+        //curMap->erase(curMap->begin()+(rY*curMap->size()+rY));
     }
     
    

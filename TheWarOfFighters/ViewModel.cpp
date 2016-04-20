@@ -31,7 +31,13 @@ std::vector<Cell*> * ViewModel::get_enemy_pos() {
 std::vector<Cell*> * ViewModel::getProjectilePos() {
     return this->projectilePos;
 }
+int ViewModel::getScore() {
+    return this->score;
+}
 
+int ViewModel::getHP() {
+    return this->hp;
+}
 ViewModel::~ViewModel() {
     
 }
@@ -44,4 +50,6 @@ void ViewModel::update(int row_size, int col_size, Cell* player_pos,
     this->enemy_pos = enemy_pos;
     this->projectilePos = projectilePos;
     this->gs = gs;
+    this->score = score;
+    this->hp = hp;
 }

@@ -42,7 +42,7 @@ void Controller::handleKeys(){
         case ' ':
             this->iwom->shoot();
             break;
-        case 'Q':
+        case 'q':
             this->iwom->setGameState(QUIT);
             break;
         default:
@@ -60,6 +60,7 @@ void Controller::welcome() {
         this->iwom->setGameState(QUIT);
 
     }
+    this->view->setNoDelay();
     this->startLoop();
 }
 void Controller::startLoop() {
@@ -68,7 +69,7 @@ void Controller::startLoop() {
     // the duration of the time
     std::chrono::duration<double> time_span;
     
-    while(this->iwom->getGameState() != QUIT) {
+    while(this->iwom->getGameState() != QUIT && this->iwom->getGameState() != GAMEMOVER) {
         
         switch (this->iwom->getGameState()) {
             case PLAYING:
@@ -90,14 +91,16 @@ void Controller::startLoop() {
                 this->iwom->setGameState(GAMEMOVER);
                 adapter->ModelToViewModel();
                 this->view->render();
-                // TO-DO
-                // add game over text to the view.
                 break;
             default:
                 break;
         }
     }
-    this->view->endGame();
+    if(this->iwom->getGameState() == QUIT) {
+        this->view->endGame();
+    } else {
+        this->view->gameOver();
+    }
     delete(this->view);
     delete(this->iwom);
     delete (this->adapter);
