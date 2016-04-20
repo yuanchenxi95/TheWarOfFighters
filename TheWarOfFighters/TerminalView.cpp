@@ -14,6 +14,7 @@ TerminalView::TerminalView(ViewModel* vm) {
     this->figher_char ='>';
     this->bullet_char = '-';
     this->enemy_char='*';
+    this->count = 0;
     this->update();
 
     //TODO update

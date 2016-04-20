@@ -14,9 +14,9 @@
 
 class TerminalView {
 protected:
-    char figher_char ='>';
-    char bullet_char = '-';
-    char enemy_char='*';
+    char figher_char;
+    char bullet_char;
+    char enemy_char;
     int row_size;
     int col_size;
     Cell* player_pos;
@@ -35,7 +35,7 @@ public:
     void render();//?
     void update();
     void setNoDelay();
-    int count = 0;
+    int count;
     void gameOver();
 };
 #endif /* TerminalView_hpp */
