@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1223636A1CC71EF400A38B0E /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 122363691CC71EF400A38B0E /* Makefile */; };
 		126A136C1CB6E4A8005CC7F4 /* IFighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 126A136A1CB6E4A8005CC7F4 /* IFighter.cpp */; };
 		126A13721CB6E962005CC7F4 /* EnemyFighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 126A13701CB6E962005CC7F4 /* EnemyFighter.cpp */; };
 		126A13751CB6EBB3005CC7F4 /* PlayerFighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 126A13731CB6EBB3005CC7F4 /* PlayerFighter.cpp */; };
@@ -39,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		122363691CC71EF400A38B0E /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		126A136A1CB6E4A8005CC7F4 /* IFighter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IFighter.cpp; sourceTree = "<group>"; };
 		126A136B1CB6E4A8005CC7F4 /* IFighter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IFighter.hpp; sourceTree = "<group>"; };
 		126A13701CB6E962005CC7F4 /* EnemyFighter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyFighter.cpp; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				90F00A471CB715AB0014CB90 /* Contoller */,
 				126A13651CB6DECB005CC7F4 /* Model */,
 				12E4F1AF1CB3FA8700541BBF /* main.cpp */,
+				122363691CC71EF400A38B0E /* Makefile */,
 			);
 			path = TheWarOfFighters;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				126A13721CB6E962005CC7F4 /* EnemyFighter.cpp in Sources */,
+				1223636A1CC71EF400A38B0E /* Makefile in Sources */,
 				126A136C1CB6E4A8005CC7F4 /* IFighter.cpp in Sources */,
 				126A13791CB6EC86005CC7F4 /* IProjectile.cpp in Sources */,
 				90F00A4A1CB716260014CB90 /* Controller.cpp in Sources */,
